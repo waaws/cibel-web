@@ -1,0 +1,47 @@
+@import 'images.less';
+@import 'buttons.less';
+@import 'blocks.less';
+
+.home {
+  align-items: flex-end;
+  background-image: @home-background;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 1004px;
+  width: 100%;
+
+  @media @small-screen {
+    height: 500px;
+  }
+
+  .layout {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.pots-image {
+  background-image: @home-pots;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 496px;
+  min-width: 300px;
+  flex-grow: 1;
+
+  @media @small-screen {
+    height: 300px;
+  }
+}
+
+.liter-calculator {
+  align-items: center;
+  display: flex;
+  flex-grow: 1;
+  justify-content: flex-end;
+
+  @media @small-screen {
+    justify-content: center;
+  }
+}

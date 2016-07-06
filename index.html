@@ -1,0 +1,239 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Cibel</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Quattrocento' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet/less" type="text/css" href="styles/less/index.less" />
+
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+  <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+  <script type="text/javascript" src="app/cibel.module.js"></script>
+  <script type="text/javascript" src="app/controllers/navbar.controller.js"></script>
+  <script type="text/javascript" src="app/controllers/home.controller.js"></script>
+  <script type="text/javascript" src="app/controllers/modal.controller.js"></script>
+  <script type="text/javascript" src="app/controllers/literCalculator.controller.js"></script>
+
+  <script type="text/javascript" src="app/directives/literCalculator.directive.js"></script>
+  <script type="text/javascript" src="app/directives/history.directive.js"></script>
+  <script type="text/javascript" src="app/directives/social.directive.js"></script>
+  <script type="text/javascript" src="app/directives/modal.directive.js"></script>
+  <script type="text/javascript" src="app/directives/modalContent.directive.js"></script>
+
+  <script>less = { env: 'development'};</script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.6.1/less.min.js"></script>
+  <script>less.watch();</script>
+
+  <!--
+  <link rel="stylesheet" href="styles/css/index.css">
+  -->
+  <link rel="stylesheet" href="assets/fonts/icons/style.css">
+</head>
+
+<body ng-app="cibelApp">
+  <div class="modal-wrapper initiallyHidden">
+    <div class="modal-backdrop"></div>
+
+    <div class="modal-window-container"></div>
+  </div>
+
+  <div class="home-wrapper" ng-controller="homeController">
+    <header class="header">
+      <div class="header-wrapper">
+        <div class="navbar" ng-controller="navbarController">
+          <a href="/" class="header-logo"></a>
+
+          <nav class="main-nav">
+            <ul class="main-nav-menu">
+              <li class="menu-item">
+                <a ng-click="goToSection('products');" class="nav-menu-button">
+                  <i class="icon-productos"></i>
+                  <span>productos</span>
+                  <i class="icon-arrow-down"></i>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a ng-click="goToSection('advice');" class="nav-button">
+                  <i class="icon-consejo"></i>
+                  <span>consejos</span>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a ng-click="goToSection('inspiration');" class="nav-button">
+                  <i class="icon-inspiracion"></i>
+                  <span>inspiracion</span>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a ng-click="goToSection('company');" class="nav-button">
+                  <span>empresa</span>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a ng-click="goToSection('contact');" class="nav-button">
+                  <span>contacto</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <section id="main" class="main initiallyHidden">
+      <div class="main-section-wrapper"></div>
+    </section>
+
+    <section id="home" class="home">
+      <div class="layout">
+        <div class="pots-image"></div>
+        <div class="liter-calculator">
+          <a ng-click="showLiterCalculatorSection()" class="liter-calculator-button">
+            <i class="icon-calculadora"></i>
+            <span class="liter-calculator-label">calculador de litros</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="products" class="products">
+      <div class="layout">
+        <h3 class="title">productos</h3>
+
+        <div class="products-buttons-wrapper">
+          <div class="product-category-button interior">
+            <div class="product-category-label-wrapper">
+              <p class="product-category-label-title">interiores</p>
+            </div>
+          </div>
+
+          <div href="#" class="product-category-button exterior">
+            <div class="product-category-label-wrapper">
+              <p class="product-category-label-title">exteriores</p>
+            </div>
+          </div>
+
+          <div href="#" class="product-category-button maderas">
+            <div class="product-category-label-wrapper">
+              <p class="product-category-label-title">maderas y metales</p>
+            </div>
+          </div>
+
+          <div href="#" class="product-category-button fondos">
+            <div class="product-category-label-wrapper">
+              <p class="product-category-label-title">fondos y acondicionadores</p>
+            </div>
+          </div>
+
+          <div href="#" class="product-category-button industrial">
+            <div class="product-category-label-wrapper">
+              <p class="product-category-label-title">industrial</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="advice" class="advice">
+      <div class="layout">
+        <h1 class="title">consejos</h1>
+
+        <div class="advice-buttons-wrapper">
+          <button ng-click="openAdviceModal(1);" class="white-button">Antes de empezar</button>
+          <button ng-click="openAdviceModal(2);" class="white-button">Reglas</button>
+          <button ng-click="openAdviceModal(3);" class="white-button">Preparación de superficies sin pintar</button>
+          <button ng-click="openAdviceModal(4);" class="white-button">Mantenimiento</button>
+          <button ng-click="openAdviceModal(5);" class="white-button">Problemas comunes de la pintura</button>
+          <button ng-click="openAdviceModal(6);" class="white-button">Aplicación</button>
+          <button ng-click="openAdviceModal(7);" class="white-button">Herramientas</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="inspiration" class="inspiration">
+      <div class="layout">
+        <h1 class="title">inspiración</h1>
+
+        <div class="inspiration-box-wrapper">
+          <div class="inspiration-box">
+            <h4 class="inspiration-box-title">¿Cómo elegir los colores para tu casa?</h4>
+            <p class="inspiration-box-text">
+              Los colores reflejan tu personalidad, tu estado de ánimo, tus sentimientos... La elección incorrecta del color hará que tu casa pierda calidez y que no se destaquen sus rasgos distintivos. Sin embargo, si elegís correctamente los colores, podrás destacar tu casa, distinguir su arquitectura e incluso ocultar los defectos estructurales que puedan llegar  existir. Así, impulsaras el atractivo de tu inmueble y por consiguiente el valor de mercado.
+            </p>
+            <div class="inspiration-box-button-wrapper">
+              <a ng-click="openInspirationModal(1);" class="white-button">sugerencias</a>
+            </div>
+          </div>
+
+          <div class="inspiration-box">
+            <h4 class="inspiration-box-title">¿Cómo nos afectan los colores?</h4>
+            <p class="inspiration-box-text">
+              El color no solo es la impresión  que nuestros ojos perciben por la luz, en otras palabras lo que miramos, sino que además influye en lo que sentimos. Así,  a partir de la Psicología del Color y la Cromoterapia, se ha buscado identificar los efectos de los colores sobre nosotros.
+            </p>
+            <div class="inspiration-box-button-wrapper">
+              <a ng-click="openInspirationModal(2);" class="white-button">descubramos</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="company" class="company">
+      <div class="layout">
+        <div class="company-box-wrapper">
+          <div class="company-box">
+            <h3 class="title">empresa</h3>
+            <p class="company-box-text">
+              Compañía Industrial de Barnices, Esmaltes y Lacas.
+            </p>
+            <p class="company-box-text">
+              Haciendo uso de los conocimientos y experiencias adquiridas, desarrollo una línea completa de productos para atender al mercado. Asimismo incorporó un sistema tintométrico, instalando varias maquinas en diversos comercios. De esta manera, quedo conformada una de las más completas líneas de pinturas para Hogar y Obra disponible en el mercado argentino.
+              La línea de pinturas Cibel se vende en pinturerías, ferreterías, corralones y mayoristas.
+            </p>
+            <a ng-click="showHistorySection()" class="blue-button">historia</a>
+          </div>
+
+          <div class="company-box">
+            <h3 class="title">responsabilidad social</h3>
+            <p class="company-box-text">
+              Al servicio de un mundo mejor.
+            </p>
+            <p class="company-box-text">
+              Desde 1947 Cibel S.R.L. se compromete a contribuir en la existencia de una sociedad más justa y en defensa de un medio ambiente sano.
+            </p>
+            <p class="company-box-text">
+              Nuestra actividad como compañia química presenta un gran impacto en el desarrollo social de nuestro país, y específicamente en la comunidad en la que desarrollamos nuestra actividad.
+            </p>
+            <a ng-click="showSocialSection()" class="blue-button">un mundo mejor</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="foot">
+    </section>      
+
+    <footer id="contact" class="footer">
+      <div class="footer-content">
+        <div class="footer-logo"></div>
+
+        <div class="footer-contact-info">
+          <h3 class="footer-title">contacto</h3>
+          <p class="footer-text">Calle Talcahuano 359,</p>
+          <p class="footer-text">Ciudad Madero, Buenos Aires</p>
+          <p class="footer-text">Teléfono: 4442-9970</p>
+          <p class="footer-text">consultas@pinturascibel.com.ar</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

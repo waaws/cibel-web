@@ -1,0 +1,77 @@
+@import 'images.less';
+@import 'colors.less';
+@import 'blocks.less';
+
+.inspiration {
+  background-image: @inspiration-background;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 890px;
+  width: 100%;
+  padding: 100px 0;
+
+  @media @small-screen {
+    padding: 24px;
+  }
+
+  .title {
+    color: @c_white;
+    line-height: 121px;
+
+    @media @small-screen {
+      line-height: 50px;
+    }
+  }
+
+  .layout {
+    display: flex;
+    flex-direction: column;    
+  }
+}
+
+.inspiration-box-wrapper {
+  display: flex;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 36px;
+
+  @media @small-screen {
+    padding: 0;
+  }
+}
+
+.inspiration-box {
+  background: fade(@c_grays_09, 60%);
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  margin: 24px;
+  padding: 18px;
+  min-width: 300px;
+
+  @media @small-screen {
+    margin: 12px;
+  }
+}
+
+.inspiration-box-button-wrapper {
+  align-self: flex-end;
+  margin-top: auto;
+
+  .white-button {
+    text-transform: uppercase;
+  }
+}
+
+.inspiration-box-title {
+  color: @c_white;
+  margin: 0;
+}
+
+.inspiration-box-text {
+  color: @c_white;
+  font-family: 'Quattrocento', serif;
+  padding-top: 24px;
+}

@@ -1,0 +1,99 @@
+@import 'colors.less';
+@import 'images.less';
+
+.liter-calculator-section-content {
+  width: 100%;
+}
+
+.liter-calculator-header-logo {
+  background-image: @logo;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  flex-shrink: 0;
+  height: 90px;
+  width: 150px;
+}
+
+.liter-calculator-header-title {
+  color: @c_white;
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 64px;
+  margin-left: 24px;
+  margin-right: auto;
+}
+
+.liter-calculator-header-pots-image {
+  background-image: @home-pots;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 240px;
+  margin-top: 24px;
+  width: 270px;
+}
+
+.liter-calculator-form {
+  padding: 48px 0;
+  color: @c_grays_03;
+}
+
+.liter-calculator-form-header-wrapper {
+  border-bottom: 1px solid @c_grays_03;
+}
+
+.liter-calculator-text {
+  color: @c_grays_03;
+  font-weight: 700;
+  margin: 16px;
+}
+
+.liter-calculator-form-input-wrapper {
+   display: flex;
+   justify-content: space-between;
+}
+
+.liter-calculator-input {
+  flex: 1;
+  margin: 16px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+
+  div {
+    display: flex;
+    margin-bottom: 12px;
+  }
+}
+
+.radio-button-input-wrapper {
+  font-weight: 700;
+}
+
+.text-input {
+  flex: 1;
+
+  &:nth-child(2) {
+    margin-left: 6px;
+  }
+}
+
+.liter-calculator-button-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.liter-calculator-result {
+  padding: 48px 0;
+}
+
+.liter-calculator-result-content {
+  padding: 24px 0;
+}
+
+.liter-calculator-result-number {
+  font-size: 48px;
+  padding: 0 6px;
+}

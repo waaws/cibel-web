@@ -1,0 +1,48 @@
+@import 'images.less';
+
+.company {
+  background-image: @company-background;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 480px;
+  padding: 48px 72px;
+  width: 100%;
+
+  @media @small-screen {
+    padding: 24px;
+  }
+}
+
+.company-box-wrapper {
+  align-items: stretch;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.company-box {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin: 24px;
+  min-width: 360px;
+
+  @media @small-screen {
+    margin: 12px;
+    min-width: inherit;
+  }
+
+  .title {
+    color: @c_white;
+    text-transform: capitalize;
+  }
+
+  .company-box-text {
+    align-self: flex-start;
+    color: @c_white;
+    font-family: 'Quattrocento', serif;
+    margin: 12px 0;
+  }
+}

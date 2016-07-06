@@ -1,0 +1,39 @@
+@import 'images.less';
+@import 'colors.less';
+@import 'blocks.less';
+
+.advice {
+  background-image: @advice-background;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 890px;
+  padding: 50px 0;
+  width: 100%;
+
+  @media @small-screen {
+    height: 620px;
+    padding: 24px 0;
+  }
+
+  .title {
+    color: @c_white;
+    line-height: 121px;
+
+    @media @small-screen {
+      line-height: 50px;
+    }
+  }
+}
+
+.advice-buttons-wrapper {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 40px;
+
+  @media @small-screen {
+    margin: 12px;
+  }
+}
