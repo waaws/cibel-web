@@ -104,7 +104,6 @@
 }
 
 .modal-template-wrapper {
-  padding: 24px;
   overflow: auto;
   flex-grow: 1;
 }
@@ -124,4 +123,86 @@
   width: 100%;
   height: 180px;
   flex-shrink: 0;
+}
+
+.inspiration-modal-color-box-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.inspiration-modal-color-box {
+  border: 1px solid @c_grays_03;
+  display: flex;
+  flex-direction: column;
+  margin: 6px;
+  padding: 12px;
+  max-width: 200px;
+  min-width: 100px;
+}
+
+.inspiration-modal-color-box-sample {
+  width: 100%;
+  height: 150px;
+  border: 1px solid @c_grays_03;
+
+  &.blue {
+    background-color: #2a90e2;
+  }
+
+  &.red {
+    background-color: #ff002d;
+  }
+
+  &.yellow {
+    background-color: #fce600;
+  }
+
+  &.green {
+    background-color: #5dd31d;
+  }
+
+  &.brown {
+    background-color: #93562c;
+  }
+
+  &.black {
+    background-color: #000000;
+  }
+
+  &.orange {
+    background-color: #ffa21e;
+  }
+
+  &.purple {
+    background-color: #cd00e0;
+  }
+
+  &.rose {
+    background-color: #ffa7dd;
+  }
+
+  &.gray {
+    background-color: #9a9a9a;
+  }
+}
+
+.inspiration-modal-color-box-title {
+  font-weight: 700;
+  margin-top: 12px;
+}
+
+.inspiration-modal-color-box-text-wrapper {
+  font-size: 12px;
+  margin: 6px 0;
+
+  p {
+    margin: 6px 0;
+  }
+}
+
+.inpiration-modal-color-box-list {
+  li {
+    display: block;
+  }
 }
