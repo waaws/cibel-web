@@ -1,4 +1,4 @@
-cibelApp.directive('modalContent', function() {
+module.exports = function() {
   return {
     restrict: 'EA',
     link: function(scope, element, attrs) {
@@ -8,4 +8,4 @@ cibelApp.directive('modalContent', function() {
     },
     template: '<div ng-include="getContentUrl()"></div>'
   }
-});
+};

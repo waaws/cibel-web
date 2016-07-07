@@ -1,0 +1,1 @@
+cibelApp.factory();

@@ -1,5 +1,4 @@
-cibelApp.controller('homeController', ['$scope', '$compile', function($scope, $compile) {
-
+module.exports = ['$scope', '$compile', function($scope, $compile) {
   function appendToMainSection(htmlString) {
     var compiledeHTML = $compile(htmlString)($scope);
     $("#main").hide();
@@ -19,6 +18,10 @@ cibelApp.controller('homeController', ['$scope', '$compile', function($scope, $c
     appendToMainSection("<div social-section></div>");
   }
 
+  $scope.showProductIndexSection = function(category) {
+    appendToMainSection("<div product-index-section category=" + category + "></div>");
+  }
+
   $scope.openModal = function(header, templateType, templateId, maxTemplateId) {
     var htmlString = "<modal header=" + header + " template-type=" + templateType + " template-id=" + templateId + " max-template-id=" + maxTemplateId + "></modal>";
     var compiledeHTML = $compile(htmlString)($scope);
@@ -32,4 +35,4 @@ cibelApp.controller('homeController', ['$scope', '$compile', function($scope, $c
   $scope.openInspirationModal = function(inspirationId) {
     $scope.openModal('inspiración', 'inspiration', inspirationId, 2);
   }
-}]);
+}];

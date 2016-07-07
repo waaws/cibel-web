@@ -1,4 +1,4 @@
-cibelApp.controller('modalController', ['$scope', '$compile', function($scope, $compile) {
+module.exports = ['$scope', '$compile', function($scope, $compile) {
   $scope.maxTemplateId;
   $scope.templateType;
   $scope.templateId;
@@ -39,4 +39,4 @@ cibelApp.controller('modalController', ['$scope', '$compile', function($scope, $
     $(".modal-template-wrapper").empty();
     $(".modal-template-wrapper").append(compiledeHTML);
   }
-}]);
+}];

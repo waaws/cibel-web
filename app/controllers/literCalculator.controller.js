@@ -1,4 +1,4 @@
-cibelApp.controller('literCalculatorController', ['$scope', function($scope) {
+module.exports = ['$scope', function($scope) {
   $scope.surface = '';
   $scope.product = '';
   $scope.parameterType = '';
@@ -32,4 +32,4 @@ cibelApp.controller('literCalculatorController', ['$scope', function($scope) {
     $('.liter-calculator-form').show();
     $('.liter-calculator-result').hide();
   }
-}]);
+}];

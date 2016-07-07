@@ -1,4 +1,4 @@
-cibelApp.directive('modal', function() {
+module.exports = function() {
   return {
     restrict: 'EA',
     controller: 'modalController',
@@ -16,4 +16,4 @@ cibelApp.directive('modal', function() {
       }
     }
   }
-});
+};

@@ -14,18 +14,9 @@
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
   <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="https://npmcdn.com/contentful@latest/browser-dist/contentful.min.js"></script>
 
-  <script type="text/javascript" src="app/cibel.module.js"></script>
-  <script type="text/javascript" src="app/controllers/navbar.controller.js"></script>
-  <script type="text/javascript" src="app/controllers/home.controller.js"></script>
-  <script type="text/javascript" src="app/controllers/modal.controller.js"></script>
-  <script type="text/javascript" src="app/controllers/literCalculator.controller.js"></script>
-
-  <script type="text/javascript" src="app/directives/literCalculator.directive.js"></script>
-  <script type="text/javascript" src="app/directives/history.directive.js"></script>
-  <script type="text/javascript" src="app/directives/social.directive.js"></script>
-  <script type="text/javascript" src="app/directives/modal.directive.js"></script>
-  <script type="text/javascript" src="app/directives/modalContent.directive.js"></script>
+  <script type="text/javascript" src="dist/bundle.js"></script>
 
   <script>less = { env: 'development'};</script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.6.1/less.min.js"></script>
@@ -110,31 +101,36 @@
         <h3 class="title">productos</h3>
 
         <div class="products-buttons-wrapper">
-          <div class="product-category-button interior">
+          <div ng-click="showProductIndexSection('interior')" class="product-category-button interior">
+            <div class="product-category-button-background"></div>
             <div class="product-category-label-wrapper">
               <p class="product-category-label-title">interiores</p>
             </div>
           </div>
 
-          <div href="#" class="product-category-button exterior">
+          <div ng-click="showProductIndexSection('exterior')" class="product-category-button exterior">
+            <div class="product-category-button-background"></div>
             <div class="product-category-label-wrapper">
               <p class="product-category-label-title">exteriores</p>
             </div>
           </div>
 
-          <div href="#" class="product-category-button maderas">
+          <div ng-click="showProductIndexSection('maderas')" class="product-category-button maderas">
+            <div class="product-category-button-background"></div>
             <div class="product-category-label-wrapper">
               <p class="product-category-label-title">maderas y metales</p>
             </div>
           </div>
 
-          <div href="#" class="product-category-button fondos">
+          <div ng-click="showProductIndexSection('fondos')" class="product-category-button fondos">
+            <div class="product-category-button-background"></div>
             <div class="product-category-label-wrapper">
               <p class="product-category-label-title">fondos y acondicionadores</p>
             </div>
           </div>
 
-          <div href="#" class="product-category-button industrial">
+          <div ng-click="showProductIndexSection('industrial')" class="product-category-button industrial">
+            <div class="product-category-button-background"></div>
             <div class="product-category-label-wrapper">
               <p class="product-category-label-title">industrial</p>
             </div>

@@ -1,4 +1,4 @@
-cibelApp.directive('literCalculatorSection', function() {
+module.exports = function() {
   return {
     replace: true,
     templateUrl: './app/views/liter-calculator.html',
@@ -11,4 +11,4 @@ cibelApp.directive('literCalculatorSection', function() {
       }
     }
   }
-});
+};

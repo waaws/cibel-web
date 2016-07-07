@@ -24,15 +24,13 @@
 
 .product-category-button {
   align-items: flex-end;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
   cursor: pointer;
   display: flex;
   flex-grow: 0;
   flex-shrink: 0;
   height: 280px;
   margin: 12px;
+  position: relative;
   text-align: right;
   width: 350px;
 
@@ -41,8 +39,16 @@
     width: 280px;
   }
 
+  &:hover {
+    .product-category-button-background {
+      opacity: 1;
+    }
+  }
+
   &.interior {
-    background-image: @products-interior;
+    .product-category-button-background {
+      background-image: @products-interior;
+    }
 
     .product-category-label-wrapper {
       background: fade(@c_blue_02, 60%);
@@ -50,7 +56,9 @@
   }
 
   &.exterior {
-    background-image: @products-exterior;
+    .product-category-button-background {
+      background-image: @products-exterior;
+    }
 
     .product-category-label-wrapper {
       background: fade(@c_green, 60%);
@@ -58,7 +66,9 @@
   }
 
   &.maderas {
-    background-image: @products-maderas;
+    .product-category-button-background {
+      background-image: @products-maderas;
+    }
 
     .product-category-label-wrapper {
       background: fade(@c_yellow_01, 60%);
@@ -66,7 +76,9 @@
   }
 
   &.fondos {
-    background-image: @products-fondos;
+    .product-category-button-background {
+      background-image: @products-fondos;
+    }
 
     .product-category-label-wrapper {
       background: fade(@c_red, 60%);
@@ -74,12 +86,26 @@
   }
 
   &.industrial {
-    background-image: @products-industrial;
+    .product-category-button-background {
+      background-image: @products-industrial;
+    }
 
     .product-category-label-wrapper {
       background: fade(@c_blue_01, 60%);
     }
   }
+}
+
+.product-category-button-background {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0.8;
 }
 
 .product-category-label-wrapper {
@@ -97,4 +123,39 @@
   font-weight: 600;
   line-height: 30px;
   text-transform: uppercase;
+}
+
+.product-section-content {
+  width: 100%;
+}
+
+.product-section-header-wrapper {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.product-section-header-title {
+  color: @c_white;
+  font-size: 48px;
+  font-weight: 700;
+  text-transform: uppercase;
+  flex-grow: 1;
+}
+
+.product-section-header-logo {
+  background-image: @logo;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  flex-shrink: 0;
+  flex-grow: 0;
+  height: 90px;
+  width: 150px;
+}
+
+.product-index-section-content-title {
+  font-size: 24px;
+  text-align: right;
 }

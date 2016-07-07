@@ -1,4 +1,4 @@
-cibelApp.directive('historySection', function() {
+module.exports = function() {
   return {
     replace: true,
     templateUrl: './app/views/history.html',
@@ -12,4 +12,4 @@ cibelApp.directive('historySection', function() {
       $("#main").slideDown();
     }
   }
-});
+};

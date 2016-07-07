@@ -1,7 +1,11 @@
 module.exports = function() {
   return {
+    controller: 'productController',
     replace: true,
-    templateUrl: './app/views/social.html',
+    scope: {
+      category: '@'
+    },
+    templateUrl: './app/views/product-index.html',
     link: function(scope, element, attributes) {
       $("#home").hide();
       $("#products").hide();

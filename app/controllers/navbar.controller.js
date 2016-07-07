@@ -1,4 +1,4 @@
-cibelApp.controller('navbarController', ['$scope', '$location', '$anchorScroll', function($scope, $location, $anchorScroll) {
+module.exports = ['$scope', '$location', '$anchorScroll', function($scope, $location, $anchorScroll) {
   function restoreSectionsVisibility() {
     $("#main").hide();
     $("#home").show();
@@ -13,4 +13,4 @@ cibelApp.controller('navbarController', ['$scope', '$location', '$anchorScroll',
     $location.hash(sectionId);
     $anchorScroll();
   }
-}]);
+}];
