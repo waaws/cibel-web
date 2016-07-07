@@ -16,7 +16,7 @@ cibelApp.controller('homeController', ['$scope', '$compile', function($scope, $c
   }
 
   $scope.showSocialSection = function() {
-    appendToMainSection("<div history-section></div>");
+    appendToMainSection("<div social-section></div>");
   }
 
   $scope.openModal = function(header, templateType, templateId, maxTemplateId) {

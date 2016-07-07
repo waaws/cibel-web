@@ -44,7 +44,6 @@
     <div class="modal-window-container"></div>
   </div>
 
-  <div class="home-wrapper" ng-controller="homeController">
     <header class="header">
       <div class="header-wrapper">
         <div class="navbar" ng-controller="navbarController">
@@ -86,6 +85,9 @@
         </div>
       </div>
     </header>
+
+  <div class="home-wrapper" ng-controller="homeController">
+
 
     <section id="main" class="main initiallyHidden">
       <div class="main-section-wrapper"></div>
@@ -191,27 +193,31 @@
         <div class="company-box-wrapper">
           <div class="company-box">
             <h3 class="title">empresa</h3>
-            <p class="company-box-text">
-              Compañía Industrial de Barnices, Esmaltes y Lacas.
-            </p>
-            <p class="company-box-text">
-              Haciendo uso de los conocimientos y experiencias adquiridas, desarrollo una línea completa de productos para atender al mercado. Asimismo incorporó un sistema tintométrico, instalando varias maquinas en diversos comercios. De esta manera, quedo conformada una de las más completas líneas de pinturas para Hogar y Obra disponible en el mercado argentino.
-              La línea de pinturas Cibel se vende en pinturerías, ferreterías, corralones y mayoristas.
-            </p>
+            <div class="company-box-text-wrapper">
+              <p class="company-box-text">
+                Compañía Industrial de Barnices, Esmaltes y Lacas.
+              </p>
+              <p class="company-box-text">
+                Haciendo uso de los conocimientos y experiencias adquiridas, desarrollo una línea completa de productos para atender al mercado. Asimismo incorporó un sistema tintométrico, instalando varias maquinas en diversos comercios. De esta manera, quedo conformada una de las más completas líneas de pinturas para Hogar y Obra disponible en el mercado argentino.
+                La línea de pinturas Cibel se vende en pinturerías, ferreterías, corralones y mayoristas.
+              </p>
+            </div>
             <a ng-click="showHistorySection()" class="blue-button">historia</a>
           </div>
 
           <div class="company-box">
             <h3 class="title">responsabilidad social</h3>
-            <p class="company-box-text">
-              Al servicio de un mundo mejor.
-            </p>
-            <p class="company-box-text">
-              Desde 1947 Cibel S.R.L. se compromete a contribuir en la existencia de una sociedad más justa y en defensa de un medio ambiente sano.
-            </p>
-            <p class="company-box-text">
-              Nuestra actividad como compañia química presenta un gran impacto en el desarrollo social de nuestro país, y específicamente en la comunidad en la que desarrollamos nuestra actividad.
-            </p>
+            <div class="company-box-text-wrapper">
+              <p class="company-box-text">
+                Al servicio de un mundo mejor.
+              </p>
+              <p class="company-box-text">
+                Desde 1947 Cibel S.R.L. se compromete a contribuir en la existencia de una sociedad más justa y en defensa de un medio ambiente sano.
+              </p>
+              <p class="company-box-text">
+                Nuestra actividad como compañia química presenta un gran impacto en el desarrollo social de nuestro país, y específicamente en la comunidad en la que desarrollamos nuestra actividad.
+              </p>
+            </div>
             <a ng-click="showSocialSection()" class="blue-button">un mundo mejor</a>
           </div>
         </div>
