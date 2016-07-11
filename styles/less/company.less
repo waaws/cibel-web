@@ -22,7 +22,7 @@
 }
 
 .company-box {
-  align-items: center;
+  align-items: flex-end;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -36,7 +36,11 @@
 
   .title {
     color: @c_white;
-    text-transform: capitalize;
+    text-transform: uppercase;
+    text-align: left;
+    opacity: .8;
+    width: 100%;
+    text-align: left;
   }
 }
 
@@ -45,8 +49,10 @@
 }
 
 .company-box-text {
-  align-self: flex-start;
+
   color: @c_white;
-  font-family: 'Quattrocento', serif;
+  font-weight: 100;
+  letter-spacing: 1px;
+  opacity: .6;
   margin: 12px 0;
 }
