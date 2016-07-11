@@ -1,19 +1,18 @@
 module.exports = function() {
   return {
-    controller: 'productIndexController',
+    controller: 'productShowController',
     replace: true,
     scope: {
-      category: '@'
+      category: '@',
+      productId: '@'
     },
-    templateUrl: './app/views/product-index.html',
+    templateUrl: './app/views/product-show.html',
     link: function(scope, element, attributes) {
       $("#home").hide();
       $("#products").hide();
       $("#advice").hide();
       $("#inspiration").hide();
       $("#company").hide();
-      $("#main").scrollTop();
-      $("#main").slideDown();
     }
   }
 };

@@ -157,5 +157,196 @@
 
 .product-index-section-content-title {
   font-size: 24px;
+  margin: 24px 0;
   text-align: right;
+}
+
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  margin: 24px 0;
+}
+
+.product-list-item {
+  align-items: center;
+  border: 1px solid @c_grays_03;
+  box-shadow: 0 0 5px @c_grays_03;
+  cursor: pointer;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  flex-grow: 0;
+  margin: 12px;
+  padding: 12px;
+  opacity: 0.8;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.product-list-item-image {
+  max-width: 200px;
+  margin: 0 12px;
+}
+
+.product-list-item-name {
+  margin: 12px 0;
+  text-align: center;
+}
+
+.product-info-wrapper {
+  width: 100%;
+}
+
+.product-info-header-wrapper {
+  width: 100%;
+}
+
+.product-info-header {
+  display: flex;
+  padding: 0 24px;
+}
+
+.product-image-wrapper {
+  display: flex;
+  margin: 0 24px;
+  min-width: 200px;
+}
+
+.product-image {
+  position: relative;
+  width: 100%;
+
+  img {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+}
+
+.product-info-header-text {
+  margin: 0 24px;
+  text-align: right;
+}
+
+.product-name {
+  font-size: 36px;
+}
+
+.product-description {
+  font-family: 'Quattrocento', serif;
+  margin: 24px 0;
+}
+
+.product-technical-info-section {
+  background-color: @c_grays_01;
+  border-bottom: 1px solid @c_grays_02;
+  border-top: 1px solid @c_grays_03;
+  margin: 24px 0;
+  padding: 12px;
+  width: 100%;
+}
+
+.product-technical-info {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 12px;
+}
+
+.product-technical-info-title-wrapper {
+  border-bottom: 1px solid @c_grays_03;
+}
+
+.product-technical-info-title {
+  font-weight: 600;
+  margin: 12px;
+}
+
+.product-technical-info-fields-wrapper {
+  flex: 1;
+  padding: 12px;
+
+  &:nth-child(1) {
+    border-right: 1px solid @c_grays_03;
+
+    @media @small-screen {
+      border-right: 0;
+    }
+  }
+}
+
+.product-technical-info-field-wrapper {
+  align-items: center;
+  display: flex;
+  margin: 12px;
+  min-width: 300px;
+}
+
+.product-technical-info-field-icon {
+  flex-grow: 0;
+  flex-shrink: 0;
+  font-size: 24px;
+  margin: 12px;
+}
+
+.product-technical-info-field {
+  flex-grow: 1;
+}
+
+.product-technical-info-field-key {
+  font-weight: 600;
+}
+
+.product-technical-info-field-value {
+  text-transform: capitalize;
+}
+
+.product-extra-info-items-wrapper {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.product-extra-info-item {
+  flex: 1;
+  margin: 24px;
+  max-width: 500px;
+  min-width: 40%;
+}
+
+.product-extra-info-header {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 80px;
+  width: 100%;
+
+  &.application {
+    background-image: @product-application;
+  }
+
+  &.compose {
+    background-image: @product-compose;
+  }
+
+  &.surface {
+    background-image: @product-surface;
+  }
+}
+
+.product-extra-info {
+  background-color: @c_grays_01;
+  padding: 12px;
+}
+
+.product-extra-info-key {
+  font-weight: 600;
+}
+
+.product-extra-info-value {
+  font-family: 'Quattrocento', serif;
 }
