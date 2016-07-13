@@ -100,6 +100,10 @@
   .icon-calculadora {
     font-size: 34px;
     vertical-align: middle;
+
+    @media @small-screen {
+      font-size: 24px;
+    }
   }
 }
 
@@ -142,6 +146,11 @@
   text-transform: uppercase;
   transition: 0.5s;
   
+  @media @small-screen {
+    font-size: 12px;
+    padding: 12px 24px;
+  }
+
   &:hover {
     background-color: @c_green;
     color: @c_white;

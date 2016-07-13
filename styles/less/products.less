@@ -164,6 +164,10 @@
   flex-grow: 0;
   height: 90px;
   width: 150px;
+
+  @media @small-screen {
+    display: none;
+  }
 }
 
 .product-index-section-content-title {
@@ -203,6 +207,7 @@
     font-size: 12px;
     margin: 6px;
     padding: 12px 6px;
+    flex-grow: 1;
   }
 
   &:hover {
@@ -216,12 +221,17 @@
 
   @media @small-screen {
     max-width: 80px;
+    margin: 6px;
   }
 }
 
 .product-list-item-name {
   margin: 12px 0;
   text-align: center;
+
+  @media @small-screen {
+    margin: 0;
+  }
 }
 
 .product-info-wrapper {
@@ -238,6 +248,10 @@
 
   @media @small-screen {
     flex-direction: column;
+    border: 1px solid @c_grays_03;
+    box-shadow: 0 0 5px @c_grays_03;
+    border-radius: 6px;
+    padding: 12px;
   }
 }
 
@@ -250,6 +264,10 @@
 .product-image {
   position: relative;
   width: 100%;
+
+  @media @small-screen {
+    margin: 12px 0;
+  }
 
   img {
     position: absolute;
@@ -265,14 +283,28 @@
 .product-info-header-text {
   margin: 0 24px;
   text-align: right;
+
+  @media @small-screen {
+    margin: 0;
+  }
 }
 
 .product-name {
   font-size: 36px;
+
+  @media @small-screen {
+    font-size: 24px;
+    margin: 12px 0;
+  }
 }
 
 .product-description {
   margin: 24px 0;
+
+  @media @small-screen {
+    margin: 0;
+    text-align: left;
+  }
 }
 
 .product-technical-info-section {
@@ -282,12 +314,20 @@
   margin: 24px 0;
   padding: 12px;
   width: 100%;
+
+  @media @small-screen {
+    margin: 12px 0;
+  }
 }
 
 .product-technical-info {
   display: flex;
   flex-wrap: wrap;
   margin: 12px;
+
+  @media @small-screen {
+    margin: 0;
+  }
 }
 
 .product-technical-info-title-wrapper {
@@ -351,6 +391,10 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+
+  @media @small-screen {
+    flex-direction: column;
+  }
 }
 
 .product-extra-info-item {
@@ -358,6 +402,10 @@
   margin: 24px;
   max-width: 500px;
   min-width: 40%;
+
+  @media @small-screen {
+    margin: 6px 0;
+  }
 }
 
 .product-extra-info-header {

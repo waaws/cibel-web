@@ -13,6 +13,10 @@
   flex-shrink: 0;
   height: 90px;
   width: 150px;
+
+  @media @small-screen {
+    display: none;
+  }
 }
 
 .liter-calculator-header-title {
@@ -22,6 +26,11 @@
   line-height: 64px;
   margin-left: 24px;
   margin-right: auto;
+
+  @media @small-screen {
+    font-size: 24px;
+    line-height: 24px
+  }
 }
 
 .liter-calculator-header-pots-image {
@@ -32,11 +41,19 @@
   height: 240px;
   margin-top: 24px;
   width: 270px;
+
+  @media @small-screen {
+    display: none;
+  }
 }
 
 .liter-calculator-form {
   padding: 48px 0;
   color: @c_grays_03;
+
+  @media @small-screen {
+    padding: 0;
+  }
 }
 
 .liter-calculator-form-header-wrapper {
@@ -47,11 +64,19 @@
   color: @c_grays_03;
   font-weight: 700;
   margin: 16px;
+
+  @media @small-screen {
+    margin: 12px 0;
+  }
 }
 
 .liter-calculator-form-input-wrapper {
-   display: flex;
-   justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
+
+  @media @small-screen {
+    flex-direction: column;
+  }
 }
 
 .liter-calculator-input {
@@ -61,9 +86,18 @@
   display: flex;
   flex-direction: column;
 
-  div {
-    display: flex;
-    margin-bottom: 12px;
+  @media @small-screen {
+    margin: 6px;
+  }
+}
+
+.liter-calculator-input-wrapper {
+  display: flex;
+  margin-bottom: 12px;
+
+  @media @small-screen {
+    flex-direction: column;
+    margin: 0;
   }
 }
 
@@ -74,8 +108,16 @@
 .text-input {
   flex: 1;
 
+  @media @small-screen {
+    margin: 6px;
+  }
+
   &:nth-child(2) {
     margin-left: 6px;
+
+    @media @small-screen {
+      margin: 6px;
+    }
   }
 }
 
@@ -83,14 +125,26 @@
   display: flex;
   justify-content: flex-end;
   width: 100%;
+
+  @media @small-screen {
+    justify-content: center;
+  }
 }
 
 .liter-calculator-result {
   padding: 48px 0;
+
+  @media @small-screen {
+    padding: 24px 0;
+  }
 }
 
 .liter-calculator-result-content {
   padding: 24px 0;
+
+  @media @small-screen {
+    padding: 12px 6px;
+  }
 }
 
 .liter-calculator-result-number {
