@@ -12,13 +12,7 @@ module.exports = ['$scope', '$compile', function($scope, $compile) {
     return parseInt($scope.maxTemplateId) == parseInt($scope.templateId); 
   }
 
-  $scope.closeModal = function() {
-    $(".modal-wrapper").hide();
-    $(".modal-window-container").empty();
-  }
-
   $scope.showPreviousTemplate = function() {
-    console.log("PREVIOUS TEMPLATE");
     if (parseInt($scope.templateId) > 1) {
       $scope.templateId = parseInt($scope.templateId) - 1;
       $scope.showModalTemplate();
@@ -26,7 +20,6 @@ module.exports = ['$scope', '$compile', function($scope, $compile) {
   }
 
   $scope.showNextTemplate = function() {
-    console.log("NEXT TEMPLATE");
     if (parseInt($scope.maxTemplateId) > parseInt($scope.templateId)) {
       $scope.templateId = parseInt($scope.templateId) + 1;
       $scope.showModalTemplate();

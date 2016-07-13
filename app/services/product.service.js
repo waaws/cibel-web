@@ -1,5 +1,5 @@
 module.exports = function() {
-
+  var contentful = require('contentful');
   var spaceId = 'vuecvgfj013c';
   var accessToken = '6925775d5d11fb75a5c44f59704f065e1a27e32920f10ee3ed154ebfcd031f15';
 

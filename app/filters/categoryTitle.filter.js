@@ -7,7 +7,7 @@ module.exports = function() {
     'industrial': 'productos especiales'
   }
 
-  return function(category) {
+  return function(category, scope) {
     return categories[category];
   }
 }

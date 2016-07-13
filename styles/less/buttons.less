@@ -1,3 +1,4 @@
+@import 'blocks.less';
 @import 'colors.less';
 
 .green-button {
@@ -87,6 +88,11 @@
   display: inline-flex;
   padding: 12px 36px;
   
+  @media @small-screen {
+    margin: 0;
+    padding: 12px 24px;
+  }
+
   &:hover {
     background-color: @c_green;
   }
@@ -119,6 +125,10 @@
   line-height: 26px;
   padding: 12px 48px;
   text-transform: uppercase;
+
+  i {
+    margin-right: 24px;
+  }
 }
 
 .text-button {
@@ -128,6 +138,7 @@
   font-size: 18px;
   font-weight: 700;
   padding: 12px 48px;
+  text-align: center;
   text-transform: uppercase;
   transition: 0.5s;
   

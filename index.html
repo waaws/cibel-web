@@ -13,10 +13,6 @@
   <link rel="icon" type="image/ico" href="assets/images/favicon.ico">
 
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
-  <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <script src="https://npmcdn.com/contentful@latest/browser-dist/contentful.min.js"></script>
-
   <script type="text/javascript" src="dist/bundle.js"></script>
 
   <script>less = { env: 'development'};</script>
@@ -29,58 +25,65 @@
   <link rel="stylesheet" href="assets/fonts/icons/style.css">
 </head>
 
-<body ng-app="cibelApp">
+<body ng-app="cibelApp" ng-controller="globalController">
   <div class="modal-wrapper initiallyHidden">
-    <div class="modal-backdrop"></div>
+    <div class="modal-backdrop" ng-click="closeModal();"></div>
 
     <div class="modal-window-container"></div>
   </div>
 
-    <header class="header">
-      <div class="header-wrapper">
-        <div class="navbar" ng-controller="navbarController">
-          <a href="/" class="header-logo"></a>
+  <header class="header">
+    <div class="header-wrapper">
+      <div class="navbar" ng-controller="navbarController">
+        <a href="/" class="header-logo"></a>
 
-          <nav class="main-nav">
-            <ul class="main-nav-menu">
-              <li class="menu-item">
-                <a ng-click="goToSection('products');" class="nav-menu-button">
+        <nav class="main-nav">
+          <ul class="main-nav-menu">
+            <li class="menu-item dropdown">
+
+              <div uib-dropdown on-toggle="toggled(open)">
+                <a ng-click="goToSection('products');" class="nav-button" id="simple-dropdown">
                   <i class="icon-productos"></i>
                   <span>productos</span>
                   <i class="icon-arrow-down"></i>
                 </a>
-              </li>
-              <li class="menu-item">
-                <a ng-click="goToSection('advice');" class="nav-button">
-                  <i class="icon-consejo"></i>
-                  <span>consejos</span>
-                </a>
-              </li>
-              <li class="menu-item">
-                <a ng-click="goToSection('inspiration');" class="nav-button">
-                  <i class="icon-inspiracion"></i>
-                  <span>inspiracion</span>
-                </a>
-              </li>
-              <li class="menu-item">
-                <a ng-click="goToSection('company');" class="nav-button">
-                  <span>empresa</span>
-                </a>
-              </li>
-              <li class="menu-item">
-                <a ng-click="goToSection('contact');" class="nav-button">
-                  <span>contacto</span>
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </div>
+                <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+                  <li ng-repeat="category in categories">
+                    <a href ng-click="showProductIndexSection(category.id)">{{ category.name }}</a>
+                  </li>
+                </ul>
+              </div>
+
+            </li>
+            <li class="menu-item">
+              <a ng-click="goToSection('advice');" class="nav-button">
+                <i class="icon-consejo"></i>
+                <span>consejos</span>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a ng-click="goToSection('inspiration');" class="nav-button">
+                <i class="icon-inspiracion"></i>
+                <span>inspiracion</span>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a ng-click="goToSection('company');" class="nav-button">
+                <span>empresa</span>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a ng-click="goToSection('contact');" class="nav-button">
+                <span>contacto</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
       </div>
-    </header>
+    </div>
+  </header>
 
   <div class="home-wrapper" ng-controller="homeController">
-
-
     <section id="main" class="main initiallyHidden">
       <div class="main-section-wrapper"></div>
     </section>

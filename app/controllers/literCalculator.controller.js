@@ -1,4 +1,4 @@
-module.exports = ['$scope', function($scope) {
+module.exports = ['$scope', 'productService', function($scope, productService) {
   $scope.surface = '';
   $scope.product = '';
   $scope.parameterType = '';
@@ -8,10 +8,11 @@ module.exports = ['$scope', function($scope) {
   $scope.result = 45;
 
   $scope.availableSurfaceOptions = [
-    {id: 'superficie_1', name: 'Superficie 1'},
-    {id: 'superficie_2', name: 'Superficie 2'},
-    {id: 'superficie_3', name: 'Superficie 3'},
-    {id: 'superficie_4', name: 'Superficie 4'}
+    {id: 'paredes|', name: 'Paredes'},
+    {id: 'metales', name: 'Metales'},
+    {id: 'maderas', name: 'Maderas'},
+    {id: 'cielorrasos', name: 'Cielorrasos'},
+    {id: 'techos', name: 'Techos'}
   ];
 
   $scope.availableProductOptions = [

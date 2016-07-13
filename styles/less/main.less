@@ -1,3 +1,4 @@
+@import 'blocks.less';
 @import 'colors.less';
 @import 'images.less';
 
@@ -20,6 +21,11 @@
   padding: 24px;
   width: 100%;
 
+  @media @small-screen {
+    padding: 12px;
+    margin: 0;
+  }
+
   .layout {
     align-items: center;
     display: flex;
@@ -31,4 +37,8 @@
   display: flex;
   justify-content: center;
   width: 100%;
+
+  @media @small-screen {
+    padding: 12px;
+  }
 }

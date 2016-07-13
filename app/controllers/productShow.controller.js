@@ -1,5 +1,4 @@
 module.exports = ['$scope', '$compile', 'productService', 'categoryTitleFilter', function($scope, $compile, productService, categoryTitleFilter) {
-
   $scope.productLoaded = false;
 
   $scope.product = productService.getProduct($scope.productId)
@@ -25,5 +24,4 @@ module.exports = ['$scope', '$compile', 'productService', 'categoryTitleFilter',
     $(".main-section-wrapper").empty();
     $(".main-section-wrapper").append(compiledeHTML);    
   }
-
 }];

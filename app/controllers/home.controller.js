@@ -1,25 +1,14 @@
 module.exports = ['$scope', '$compile', function($scope, $compile) {
-  function appendToMainSection(htmlString) {
-    var compiledeHTML = $compile(htmlString)($scope);
-    $("#main").hide();
-    $(".main-section-wrapper").empty();
-    $(".main-section-wrapper").append(compiledeHTML);    
-  }
-
   $scope.showLiterCalculatorSection = function() {
-    appendToMainSection("<div liter-calculator-section></div>");
+    $scope.appendToMainSection("<div liter-calculator-section></div>");
   }
 
   $scope.showHistorySection = function() {
-    appendToMainSection("<div history-section></div>");
+    $scope.appendToMainSection("<div history-section></div>");
   }
 
   $scope.showSocialSection = function() {
-    appendToMainSection("<div social-section></div>");
-  }
-
-  $scope.showProductIndexSection = function(category) {
-    appendToMainSection("<div product-index-section category=" + category + "></div>");
+    $scope.appendToMainSection("<div social-section></div>");
   }
 
   $scope.openModal = function(header, templateType, templateId, maxTemplateId) {

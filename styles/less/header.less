@@ -44,26 +44,55 @@
 }
 
 .main-nav-menu {
-  align-items: center;
+  align-items: strech;
   display: flex;
   justify-content: space-between;
   width: 100%;
 
   .menu-item {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
     font-size: 14px;
     line-height: 22px;
     padding: 0 36px;
     text-transform: uppercase;
     transition: 0.5s;
-    
-    &:hover {
-      color: @c_orange_01;
+
+    &.dropdown {
+      &:hover {
+        .dropdown-menu {
+          display: block;
+        }
+      }
+
+      .dropdown-menu {
+        padding: 0;
+        text-transform: none;
+
+        li {
+          a {
+            line-height: 34px;
+            
+            &:hover {
+              background-color: @c_blue_01;
+              color: @c_white;
+            }
+          }
+        }
+      }
     }
 
     .icon-arrow-down {
       font-size: 8px;
       margin-left: 6px;
     }
+  }
+}
+
+.nav-button {
+  line-height: 50px;
+
+  &:hover {
+    color: @c_orange_01;
   }
 }

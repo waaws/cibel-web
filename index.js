@@ -1,7 +1,11 @@
+var angular = require('angular');
+var uibs = require('angular-ui-bootstrap');
+
 var productService = require('./app/services/product.service.js');
 
 var categoryTitleFilter = require ('./app/filters/categoryTitle.filter.js');
 
+var globalController = require('./app/controllers/global.controller.js');
 var homeController = require('./app/controllers/home.controller.js');
 var literCalculatorController = require('./app/controllers/literCalculator.controller.js');
 var modalController = require('./app/controllers/modal.controller.js');
@@ -17,12 +21,13 @@ var productIndexSectionDirective = require('./app/directives/productIndex.direct
 var productShowSectionDirective = require('./app/directives/productShow.directive.js');
 var socialSectionDirective = require('./app/directives/social.directive.js');
 
-var cibelApp = angular.module('cibelApp', []);
+var cibelApp = angular.module('cibelApp', [uibs]);
 
 cibelApp.service('productService', productService);
 
 cibelApp.filter('categoryTitle', categoryTitleFilter);
 
+cibelApp.controller('globalController', globalController);
 cibelApp.controller('homeController', homeController);
 cibelApp.controller('literCalculatorController', literCalculatorController);
 cibelApp.controller('modalController', modalController);
