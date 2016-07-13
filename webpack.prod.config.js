@@ -1,6 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
-
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
  context: __dirname,
@@ -12,12 +12,21 @@ module.exports = {
   publicPath: '/dist/',
   filename: 'bundle.js'
  },
+
+  plugins: [
+    new ExtractTextPlugin('bundle.css'),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      }
+    })
+  ],
  
   module: {
     loaders: [
       {
         test: /\.less$/,
-        loaders:['style','css?-url','less']
+        loader: ExtractTextPlugin.extract('style','css?-url!postcss!less')
       },
     ]
   },

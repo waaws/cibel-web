@@ -1,3 +1,5 @@
+require('./styles/less/index.less');
+
 var angular = require('angular');
 var uibs = require('angular-ui-bootstrap');
 
