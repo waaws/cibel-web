@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack -p --config webpack.prod.config.js",
+    "build": "rm -rf ./dist && webpack -p --config webpack.prod.config.js",
     "dev": "rm -rf ./dist && webpack-dev-server"
   },
   "repository": {

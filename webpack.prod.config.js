@@ -26,7 +26,7 @@ module.exports = {
     loaders: [
       {
         test: /\.less$/,
-        loader: ExtractTextPlugin.extract('style','css?-url!postcss!less?relativeUrls')
+        loader: ExtractTextPlugin.extract('style','css?-url!postcss!less?rootpath=./dist/')
       },
     ]
   },
