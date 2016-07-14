@@ -1,3 +1,5 @@
+@import 'blocks.less';
+
 .modal-content-section {
   padding: 24px;
 }
@@ -5,10 +7,20 @@
 .modal-content-title {
   margin: 24px;
   text-align: right;
+
+  @media @small-screen {
+    font-size: 20px;
+    line-height: 20px;
+    margin: 12px;
+  }
 }
 
 .modal-content-paragraph {
   margin: 24px;
+
+  @media @small-screen {
+    margin: 12px;
+  }
 }
 
 .advice-modal-list-item {

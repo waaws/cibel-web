@@ -1,11 +1,11 @@
 module.exports = ['$scope', '$compile', 'productService', 'categoryTitleFilter', function($scope, $compile, productService, categoryTitleFilter) {
   $scope.productLoaded = false;
 
-  $scope.product = productService.getProduct($scope.productId)
-  .then(function(entries) {
-    $scope.product = entries.items[0].fields;
+  productService.getProduct($scope.productId)
+  .then(function(product) {
+    console.log(product);
+    $scope.product = product.fields;
     $scope.productLoaded = true;
-    $scope.$digest();
   });
 
   $scope.formatList = function(list) {

@@ -15,13 +15,11 @@
         </div>
 
         <div class="liter-calculator-form-input-wrapper">
-          <select class="liter-calculator-input" ng-model="surface">
-            <option value="">Superficie</option>
-            <option ng-repeat="option in availableSurfaceOptions" value="{{option.id}}">{{option.name}}</option>
+          <select ng-options="surface as surface.name for surface in surfaces" class="liter-calculator-input" ng-model="surface">
+            <option value="" disabled>Superficie</option>
           </select>
-          <select class="liter-calculator-input" ng-model="product">
-            <option value="">Producto</option>
-            <option ng-repeat="option in availableProductOptions | filter: { surface_id: surface }" value="{{option.id}}">{{option.name}}</option>
+          <select ng-options="product as product.fields.nombre for product in products | filter: filterProduct" class="liter-calculator-input" ng-model="product" ng-disabled="!surface">
+            <option value="" disabled>Producto</option>
           </select>
         </div>
 
@@ -33,7 +31,7 @@
               <input type="radio" ng-model="parameterType" value="squareMeter">
               Metros cuadrados (m2)
             </div>
-            <input type="text" ng-model="squareMeter" placeholder="Metros cuadrados (m2)"  class="text-input">
+            <input type="number" ng-model="squareMeter" placeholder="Metros cuadrados (m2)"  class="text-input">
           </div>
           <div class="liter-calculator-input">
             <div class="radio-button-input-wrapper">
@@ -41,14 +39,14 @@
               Ancho y largo
             </div>
             <div class="liter-calculator-input-wrapper">
-              <input type="text" ng-model="width" placeholder="Ancho" class="text-input">
-              <input type="text" ng-model="large" placeholder="Largo" class="text-input">
+              <input type="number" ng-model="width" placeholder="Ancho" class="text-input">
+              <input type="number" ng-model="large" placeholder="Largo" class="text-input">
             </div>
           </div>
         </div>
         
         <div class="liter-calculator-button-wrapper">
-          <button type="submit" class="calculate-button" ng-click="calculate()">calcular</button>
+          <button type="submit" class="calculate-button" ng-click="calculate()" ng-disabled="disableCalculateButton()">calcular</button>
         </div>
       </form>
 
@@ -60,7 +58,7 @@
         <div class="liter-calculator-result-content">
           <div class="liter-calculator-text">
             <span>Usted necesita</span>
-            <span class="liter-calculator-result-number">{{result}}</span>
+            <span class="liter-calculator-result-number">{{ result | number }}</span>
             <span>litros de pintura.</span>
           </div>
 

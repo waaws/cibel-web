@@ -1,7 +1,7 @@
 @import 'blocks.less';
 @import 'colors.less';
 
-.green-button {
+.main-button {
   background-color: @c_blue_01;
   border: 4px solid @c_white;
   border-radius: 40px;
@@ -25,7 +25,16 @@
   }
 
   &:hover {
+    background-color: @c_green;
     color: @c_white;
+  }
+
+  &[disabled=disabled], &:disabled {
+    background-color: @c_grays_03;
+
+    &:hover {
+      background-color: @c_grays_03;
+    }
   }
 }
 
@@ -54,36 +63,8 @@
   }
 }
 
-.blue-button {
-  background-color: @c_blue_01;
-  border: 1px solid @c_white;
-  border-radius: 40px;
-  color: @c_white;
-  font-size: 24px;
-  line-height: 24px;
-  margin: 12px;
-  padding: 12px 48px;
-  text-transform: uppercase;
-  white-space: nowrap;
-
-  @media @small-screen {
-    font-size: 14px;
-    line-height: 14px;
-    margin: 6px;
-    padding: 12px 24px;
-  }
-
-  &:focus {
-    color: @c_white;
-  }
-
-  &:hover {
-    color: @c_white;
-  }
-}
-
 .liter-calculator-button {
-  &:extend(.green-button all);
+  &:extend(.main-button all);
   align-items: center;
   display: inline-flex;
   padding: 12px 36px;
@@ -93,10 +74,6 @@
     padding: 12px 24px;
   }
 
-  &:hover {
-    background-color: @c_green;
-  }
-  
   .icon-calculadora {
     font-size: 34px;
     vertical-align: middle;
@@ -114,7 +91,7 @@
 }
 
 .calculate-button {
-  &:extend(.green-button all);
+  &:extend(.main-button all);
   cursor: pointer;
   font-size: 20px;
   line-height: 26px;
@@ -123,7 +100,7 @@
 }
 
 .back-button {
-  &:extend(.green-button all);
+  &:extend(.main-button all);
   cursor: pointer;
   font-size: 20px;
   line-height: 26px;

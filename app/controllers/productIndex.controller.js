@@ -8,15 +8,18 @@ module.exports = ['$scope', '$compile', 'productService', 'categoryTitleFilter',
   $scope.productsLoaded = false;
   $scope.products = [];
 
-  $scope.products = productService.getProducts($scope.category)
+  productService.getProducts()
   .then(function(entries) {
-    $scope.products = entries.items;
+    $scope.products = entries;
     $scope.productsLoaded = true;
-    $scope.$digest();
   });
+
+  $scope.filterProduct = function(product) {
+    return product.fields.linea == $scope.category;
+  }
 
   $scope.showProductSection = function(product) {
     appendToMainSection("<div product-show-section category=" + $scope.category + " product-id=" + product.fields.id + "></div>");
-  }
+  };
 
 }];
