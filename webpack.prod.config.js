@@ -5,7 +5,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
  context: __dirname,
  entry: './index.js',
- 
+
  output: {
   path: path.resolve(__dirname + '/dist/'),
   // esto es para webpack-dev-server
@@ -21,12 +21,12 @@ module.exports = {
       }
     })
   ],
- 
+
   module: {
     loaders: [
       {
         test: /\.less$/,
-        loader: ExtractTextPlugin.extract('style','css?-url!postcss!less')
+        loader: ExtractTextPlugin.extract('style','css?-url!postcss!less?relativeUrls')
       },
     ]
   },
