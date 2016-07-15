@@ -1,4 +1,4 @@
-module.exports = function($localStorage, $q) {
+module.exports = ['$localStorage', '$q', function($localStorage, $q) {
   var _ = require('lodash');
 
   var contentful = require('contentful');
@@ -55,4 +55,4 @@ module.exports = function($localStorage, $q) {
   };
 
   return factory;
-};
+}];
