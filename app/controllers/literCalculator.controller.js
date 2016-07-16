@@ -38,7 +38,7 @@ module.exports = ['$rootScope', '$scope', 'productService',
     ];
 
     $scope.filterProduct = function(product) {
-      return $scope.surface && product.fields.superficie == $scope.surface.id;
+      return $scope.surface && product.fields.superficie && product.fields.superficie.includes($scope.surface.id);
     }
 
     $scope.disableCalculateButton = function() {

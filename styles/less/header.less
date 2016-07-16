@@ -18,6 +18,7 @@
 
 .header-logo {
   background-image: @logo-header;
+  flex-grow: 0;
   flex-shrink: 0;
   height: 50px;
   margin: 2px 24px;
@@ -40,13 +41,14 @@
 
 .main-nav {
   display: flex;
-  align-items: stretch;
+  flex-grow: 1;
+  max-width: 800px;
 }
 
 .main-nav-menu {
-  align-items: strech;
   display: flex;
   justify-content: space-between;
+  margin: 0 36px;
   width: 100%;
 
   .menu-item {
@@ -54,7 +56,6 @@
     align-items: center;
     font-size: 14px;
     line-height: 22px;
-    padding: 0 36px;
     text-transform: uppercase;
     transition: 0.5s;
 
