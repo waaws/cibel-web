@@ -1,3 +1,4 @@
+@import 'blocks.less';
 @import 'images.less';
 
 .social-section-content {
@@ -79,11 +80,19 @@
 
 .social-section-content-subsection-text {
   padding-left: 48px;
+
+  @media @small-screen {
+    padding-left: 24px;
+  }
 }
 
 .social-section-content-list {
   padding-left: 48px;
   margin: 12px 0;
+
+  @media @small-screen {
+    padding-left: 24px;
+  }
 
   li {
     display: block;
@@ -97,6 +106,10 @@
   margin: 48px 0px;
   text-align: right;
   text-transform: uppercase;
+
+  @media @small-screen {
+    margin: 24px 0;
+  }
 }
 
 .social-section-content-subsection-subtitle {
@@ -104,4 +117,8 @@
   padding-left: 48px;
   margin: 12px 0;
   text-transform: uppercase;
+
+  @media @small-screen {
+    padding-left: 24px;
+  }
 }

@@ -35,6 +35,7 @@ a {
 
   &:focus {
     color: inherit;
+    outline: none;
     text-decoration: none;
   }
 }
@@ -88,4 +89,13 @@ p {
 
 * {
   box-sizing: border-box;
+}
+
+.dropdown-menu {
+  > li {
+    > a {
+      padding: 6px 12px;
+      line-height: inherit;
+    }
+  }
 }

@@ -40,46 +40,87 @@
         <a href="/" class="header-logo"></a>
 
         <nav class="main-nav">
-          <ul class="main-nav-menu">
-            <li class="menu-item dropdown">
+          <div class="mobile-main-nav" uib-dropdown on-toggle="toggled(open)">
+              <a href uib-dropdown-toggle class="nav-menu-button" id="mobile-nav-dropdown">
+                <i class="icon-menu"></i>
+              </a>
 
-              <div uib-dropdown on-toggle="toggled(open)">
-                <a ng-click="goToSection('products');" class="nav-button" id="simple-dropdown">
-                  <i class="icon-productos"></i>
-                  <span>productos</span>
-                  <i class="icon-arrow-down"></i>
+              <ul class="mobile-dropdown-menu" uib-dropdown-menu aria-labelledby="mobile-nav-dropdown">
+                <li class="menu-item">
+                  <a ng-click="goToSection('products');" class="nav-button">
+                    <span>productos</span>
+                  </a>
+                  <ul class="mobile-dropdown-submenu">
+                    <li class="submenu-item" ng-repeat="category in categories">
+                      <a href ng-click="showProductIndexSection(category.id)">{{ category.name }}</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="menu-item">
+                  <a ng-click="goToSection('advice');" class="nav-button">
+                    <span>consejos</span>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a ng-click="goToSection('inspiration');" class="nav-button">
+                    <span>inspiracion</span>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a ng-click="goToSection('company');" class="nav-button">
+                    <span>empresa</span>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a ng-click="goToSection('contact');" class="nav-button">
+                    <span>contacto</span>
+                  </a>
+                </li>
+              </ul>
+          </div>
+
+          <div class="desktop-main-nav">
+            <ul class="main-nav-menu">
+              <li class="menu-item dropdown">
+
+                <div uib-dropdown on-toggle="toggled(open)">
+                  <a ng-click="goToSection('products');" class="nav-button" id="desktop-nav-dropdown">
+                    <i class="icon-productos"></i>
+                    <span>productos</span>
+                    <i class="icon-arrow-down"></i>
+                  </a>
+                  <ul class="desktop-dropdown-menu" uib-dropdown-menu aria-labelledby="desktop-nav-dropdown">
+                    <li ng-repeat="category in categories">
+                      <a href ng-click="showProductIndexSection(category.id)">{{ category.name }}</a>
+                    </li>
+                  </ul>
+                </div>
+
+              </li>
+              <li class="menu-item">
+                <a ng-click="goToSection('advice');" class="nav-button">
+                  <i class="icon-consejo"></i>
+                  <span>consejos</span>
                 </a>
-                <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
-                  <li ng-repeat="category in categories">
-                    <a href ng-click="showProductIndexSection(category.id)">{{ category.name }}</a>
-                  </li>
-                </ul>
-              </div>
-
-            </li>
-            <li class="menu-item">
-              <a ng-click="goToSection('advice');" class="nav-button">
-                <i class="icon-consejo"></i>
-                <span>consejos</span>
-              </a>
-            </li>
-            <li class="menu-item">
-              <a ng-click="goToSection('inspiration');" class="nav-button">
-                <i class="icon-inspiracion"></i>
-                <span>inspiracion</span>
-              </a>
-            </li>
-            <li class="menu-item">
-              <a ng-click="goToSection('company');" class="nav-button">
-                <span>empresa</span>
-              </a>
-            </li>
-            <li class="menu-item">
-              <a ng-click="goToSection('contact');" class="nav-button">
-                <span>contacto</span>
-              </a>
-            </li>
-          </ul>
+              </li>
+              <li class="menu-item">
+                <a ng-click="goToSection('inspiration');" class="nav-button">
+                  <i class="icon-inspiracion"></i>
+                  <span>inspiracion</span>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a ng-click="goToSection('company');" class="nav-button">
+                  <span>empresa</span>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a ng-click="goToSection('contact');" class="nav-button">
+                  <span>contacto</span>
+                </a>
+              </li>
+            </ul>
+          </div>
         </nav>
       </div>
     </div>
