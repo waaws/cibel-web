@@ -3,6 +3,8 @@ require('./styles/less/index.less');
 var angular = require('angular');
 var uibs = require('angular-ui-bootstrap');
 var ngStorage = require('ngstorage');
+var marked = require('marked');
+var hcMarked = require('angular-marked');
 
 var productService = require('./app/services/product.service.js');
 
@@ -24,7 +26,7 @@ var productIndexSectionDirective = require('./app/directives/productIndex.direct
 var productShowSectionDirective = require('./app/directives/productShow.directive.js');
 var socialSectionDirective = require('./app/directives/social.directive.js');
 
-var cibelApp = angular.module('cibelApp', [uibs, 'ngStorage']);
+var cibelApp = angular.module('cibelApp', [uibs, 'ngStorage', 'hc.marked']);
 
 cibelApp.service('productService', productService);
 
