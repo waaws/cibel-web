@@ -2,6 +2,8 @@ module.exports = ['$rootScope', '$scope', 'productService',
   function($rootScope, $scope, productService) {
     var _ = require('lodash');
 
+    $scope.hideSectionsAndScroll(['#home', '#products', '#inspiration', '#company']);
+
     $scope.surface;
     $scope.product;
     $scope.parameterType;
@@ -58,11 +60,13 @@ module.exports = ['$rootScope', '$scope', 'productService',
       var squareMeters = calculateSquareMeters();
       $scope.result = type.literCalculatorFunction(squareMeters);
 
+      $scope.scrollToTop();
       $('.liter-calculator-form').hide();
       $('.liter-calculator-result').show();
     }
 
     $scope.back = function() {
+      $scope.scrollToTop();
       $('.liter-calculator-form').show();
       $('.liter-calculator-result').hide();
     }

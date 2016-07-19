@@ -2,6 +2,7 @@
 
 <html lang="en">
 <head>
+  <base href="/" target="_blank">
   <meta charset="utf-8">
 
   <title>Cibel</title>
@@ -36,7 +37,7 @@
 
   <header class="header">
     <div class="header-wrapper">
-      <div class="navbar" ng-controller="navbarController">
+      <div class="navbar">
         <a href="/" class="header-logo"></a>
 
         <nav class="main-nav">
@@ -47,32 +48,32 @@
 
               <ul class="mobile-dropdown-menu" uib-dropdown-menu aria-labelledby="mobile-nav-dropdown">
                 <li class="menu-item">
-                  <a ng-click="goToSection('products');" class="nav-button">
+                  <a ui-sref="index.products" class="nav-button">
                     <span>productos</span>
                   </a>
                   <ul class="mobile-dropdown-submenu">
                     <li class="submenu-item" ng-repeat="category in categories">
-                      <a href ng-click="showProductIndexSection(category.id)">{{ category.name }}</a>
+                      <a ui-sref="products({category: category.id})">{{ category.name }}</a>
                     </li>
                   </ul>
                 </li>
                 <li class="menu-item">
-                  <a ng-click="goToSection('advice');" class="nav-button">
+                  <a ui-sref="index.advice" class="nav-button">
                     <span>consejos</span>
                   </a>
                 </li>
                 <li class="menu-item">
-                  <a ng-click="goToSection('inspiration');" class="nav-button">
+                  <a ui-sref="index.inspiration" class="nav-button">
                     <span>inspiracion</span>
                   </a>
                 </li>
                 <li class="menu-item">
-                  <a ng-click="goToSection('company');" class="nav-button">
+                  <a ui-sref="index.company" class="nav-button">
                     <span>empresa</span>
                   </a>
                 </li>
                 <li class="menu-item">
-                  <a ng-click="goToSection('contact');" class="nav-button">
+                  <a ui-sref="index.contact" class="nav-button">
                     <span>contacto</span>
                   </a>
                 </li>
@@ -84,38 +85,38 @@
               <li class="menu-item dropdown">
 
                 <div uib-dropdown on-toggle="toggled(open)">
-                  <a ng-click="goToSection('products');" class="nav-button" id="desktop-nav-dropdown">
+                  <a ui-sref="index.products" class="nav-button" id="desktop-nav-dropdown">
                     <i class="icon-productos"></i>
                     <span>productos</span>
                     <i class="icon-arrow-down"></i>
                   </a>
                   <ul class="desktop-dropdown-menu" uib-dropdown-menu aria-labelledby="desktop-nav-dropdown">
                     <li ng-repeat="category in categories">
-                      <a href ng-click="showProductIndexSection(category.id)">{{ category.name }}</a>
+                      <a ui-sref="products({category: category.id})">{{ category.name }}</a>
                     </li>
                   </ul>
                 </div>
 
               </li>
               <li class="menu-item">
-                <a ng-click="goToSection('advice');" class="nav-button">
+                <a ui-sref="index.advice" class="nav-button">
                   <i class="icon-consejo"></i>
                   <span>consejos</span>
                 </a>
               </li>
               <li class="menu-item">
-                <a ng-click="goToSection('inspiration');" class="nav-button">
+                <a ui-sref="index.inspiration" class="nav-button">
                   <i class="icon-inspiracion"></i>
                   <span>inspiracion</span>
                 </a>
               </li>
               <li class="menu-item">
-                <a ng-click="goToSection('company');" class="nav-button">
+                <a ui-sref="index.company" class="nav-button">
                   <span>empresa</span>
                 </a>
               </li>
               <li class="menu-item">
-                <a ng-click="goToSection('contact');" class="nav-button">
+                <a ui-sref="index.contact" class="nav-button">
                   <span>contacto</span>
                 </a>
               </li>
@@ -127,15 +128,15 @@
   </header>
 
   <div class="home-wrapper" ng-controller="homeController">
-    <section id="main" class="main initiallyHidden">
-      <div class="main-section-wrapper"></div>
+    <section id="main" class="main">
+      <div class="main-section-wrapper" ui-view></div>
     </section>
 
     <section id="home" class="home">
       <div class="layout">
         <div class="pots-image"></div>
         <div class="liter-calculator">
-          <a ng-click="showLiterCalculatorSection()" class="liter-calculator-button">
+          <a ui-sref="literCalculator" class="liter-calculator-button">
             <i class="icon-calculadora"></i>
             <span class="liter-calculator-label">calculador de litros</span>
           </a>
@@ -148,42 +149,13 @@
         <h3 class="title">productos</h3>
 
         <div class="products-buttons-wrapper">
-          <div ng-click="showProductIndexSection('interior')" class="product-category-button interior">
+          <div ng-repeat="category in categories" ui-sref="products({category: category.id})" class="product-category-button" ng-class="category.id">
             <div class="product-category-button-background"></div>
             <div class="product-category-label-wrapper">
-              <p class="product-category-label-title">interiores</p>
-            </div>
-          </div>
-
-          <div ng-click="showProductIndexSection('exterior')" class="product-category-button exterior">
-            <div class="product-category-button-background"></div>
-            <div class="product-category-label-wrapper">
-              <p class="product-category-label-title">exteriores</p>
-            </div>
-          </div>
-
-          <div ng-click="showProductIndexSection('maderas')" class="product-category-button maderas">
-            <div class="product-category-button-background"></div>
-            <div class="product-category-label-wrapper">
-              <p class="product-category-label-title">maderas y metales</p>
-            </div>
-          </div>
-
-          <div ng-click="showProductIndexSection('fondos')" class="product-category-button fondos">
-            <div class="product-category-button-background"></div>
-            <div class="product-category-label-wrapper">
-              <p class="product-category-label-title">fondos y acondicionadores</p>
-            </div>
-          </div>
-
-          <div ng-click="showProductIndexSection('industrial')" class="product-category-button industrial">
-            <div class="product-category-button-background"></div>
-            <div class="product-category-label-wrapper">
-              <p class="product-category-label-title">industrial</p>
+              <p class="product-category-label-title">{{category.name}}</p>
             </div>
           </div>
         </div>
-
       </div>
     </section>
 
@@ -245,7 +217,7 @@
                 La línea de pinturas Cibel se vende en pinturerías, ferreterías, corralones y mayoristas.
               </p>
             </div>
-            <a ng-click="showHistorySection()" class="text-button">historia</a>
+            <a ui-sref="history" class="text-button">historia</a>
           </div>
 
           <div class="company-box">
@@ -261,7 +233,7 @@
                 Nuestra actividad como compañia química presenta un gran impacto en el desarrollo social de nuestro país, y específicamente en la comunidad en la que desarrollamos nuestra actividad.
               </p>
             </div>
-            <a ng-click="showSocialSection()" class="text-button">un mundo mejor</a>
+            <a ui-sref="social" class="text-button">un mundo mejor</a>
           </div>
         </div>
       </div>

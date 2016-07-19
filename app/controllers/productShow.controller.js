@@ -1,5 +1,9 @@
-module.exports = ['$rootScope', '$scope', '$compile', 'productService', 'categoryTitleFilter',
-  function($rootScope, $scope, $compile, productService, categoryTitleFilter) {
+module.exports = ['$rootScope', '$scope', 'productService', 'categoryTitleFilter', '$stateParams',
+  function($rootScope, $scope, productService, categoryTitleFilter, $stateParams) {
+    $scope.hideSectionsAndScroll($scope.sections);
+
+    $scope.category = $stateParams.category;
+    $scope.productId = $stateParams.productId;
     $scope.productLoaded = false;
 
     productService.getProduct($scope.productId)
@@ -15,17 +19,6 @@ module.exports = ['$rootScope', '$scope', '$compile', 'productService', 'categor
       if (list) {
         return list.join(', ');
       }
-    }
-
-    $scope.showLiterCalculatorSection = function() {
-      appendToMainSection("<div liter-calculator-section></div>");
-    }
-
-    function appendToMainSection(htmlString) {
-      var compiledeHTML = $compile(htmlString)($scope);
-      $("#main").hide();
-      $(".main-section-wrapper").empty();
-      $(".main-section-wrapper").append(compiledeHTML);
     }
   }
 ];

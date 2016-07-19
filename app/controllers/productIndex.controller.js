@@ -1,11 +1,8 @@
-module.exports = ['$rootScope', '$scope', '$compile', 'productService', 'categoryTitleFilter',
-  function($rootScope, $scope, $compile, productService, categoryTitleFilter) {
-    function appendToMainSection(htmlString) {
-      var compiledeHTML = $compile(htmlString)($scope);
-      $(".main-section-wrapper").empty();
-      $(".main-section-wrapper").append(compiledeHTML);
-    }
+module.exports = ['$rootScope', '$scope', 'productService', 'categoryTitleFilter', '$stateParams',
+  function($rootScope, $scope, productService, categoryTitleFilter, $stateParams) {
+    $scope.hideSectionsAndScroll($scope.sections);
 
+    $scope.category = $stateParams.category;
     $scope.productsLoaded = false;
     $scope.products = [];
 
@@ -21,9 +18,5 @@ module.exports = ['$rootScope', '$scope', '$compile', 'productService', 'categor
     $scope.filterProduct = function(product) {
       return product.fields.linea == $scope.category;
     }
-
-    $scope.showProductSection = function(product) {
-      appendToMainSection("<div product-show-section category=" + $scope.category + " product-id=" + product.fields.id + "></div>");
-    };
   }
 ];

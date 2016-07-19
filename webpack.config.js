@@ -3,15 +3,15 @@ var webpack = require('webpack');
 
 
 module.exports = {
- context: __dirname,
- entry: './index.js',
+  context: __dirname,
+  entry: './index.js',
 
- output: {
-  path: path.resolve(__dirname + '/dist/'),
-  // esto es para webpack-dev-server
-  publicPath: '/dist/',
-  filename: 'bundle.js'
- },
+  output: {
+    path: path.resolve(__dirname + '/dist/'),
+    // esto es para webpack-dev-server
+    publicPath: '/dist/',
+    filename: 'bundle.js'
+  },
 
   module: {
     loaders: [
@@ -22,8 +22,8 @@ module.exports = {
     ]
   },
 
- // esto guardalo para cuando uses el router de angular
- // devServer: {
- //  historyApiFallback: true
- // }
+  // esto guardalo para cuando uses el router de angular
+  devServer: {
+    historyApiFallback: true
+  }
 }

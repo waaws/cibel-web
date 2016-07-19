@@ -1,18 +1,29 @@
-module.exports = ['$scope', '$compile', function($scope, $compile) {
-  $scope.appendToMainSection = function(htmlString) {
-    var compiledeHTML = $compile(htmlString)($scope);
-    $("#main").hide();
-    $(".main-section-wrapper").empty();
-    $(".main-section-wrapper").append(compiledeHTML);    
-  }
+module.exports = ['$scope', function($scope) {
+  $scope.sections = ['#home', '#products', '#advice', '#inspiration', '#company'];
 
   $scope.closeModal = function() {
     $(".modal-wrapper").hide();
     $(".modal-window-container").empty();
   }
 
-  $scope.showProductIndexSection = function(categoryId) {
-    $scope.appendToMainSection("<div product-index-section category=" + categoryId + "></div>");
+  $scope.hideSectionsAndScroll = function(sectionsToHide) {
+    $scope.hideSections(sectionsToHide);
+    $scope.scrollToTop();
+  }
+
+  $scope.hideSections = function(sectionsToHide) {
+    if (sectionsToHide) {
+      var sectionsToShow = _.difference($scope.sections, sectionsToHide);
+      console.log(sectionsToShow);
+      $(sectionsToHide.join(',')).hide();
+      $(sectionsToShow.join(',')).show();
+    } else {
+      $($scope.sections.join(',')).show();
+    }
+  }
+
+  $scope.scrollToTop = function() {
+    $("html, body").animate({ scrollTop: 0 }, 600);
   }
 
   $scope.categories = [

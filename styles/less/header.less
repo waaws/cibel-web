@@ -5,9 +5,14 @@
 
 .header {
   background-color: @c_yellow_03;
+  height: 54px;
   position: fixed;
   width: 100%;
   z-index: 1;
+
+  @media @small-screen {
+    height: 38px;
+  }
 }
 
 .header-wrapper {
