@@ -14,7 +14,6 @@ module.exports = ['$scope', function($scope) {
   $scope.hideSections = function(sectionsToHide) {
     if (sectionsToHide) {
       var sectionsToShow = _.difference($scope.sections, sectionsToHide);
-      console.log(sectionsToShow);
       $(sectionsToHide.join(',')).hide();
       $(sectionsToShow.join(',')).show();
     } else {

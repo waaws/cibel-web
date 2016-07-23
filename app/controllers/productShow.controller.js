@@ -20,5 +20,13 @@ module.exports = ['$rootScope', '$scope', 'productService', 'categoryTitleFilter
         return list.join(', ');
       }
     }
+
+    $scope.showButtons = function() {
+      return $scope.category != 'industrial';
+    }
+
+    $scope.showPhotosSection = function() {
+      return $scope.productLoaded && $scope.product.fotos;
+    }
   }
 ];

@@ -396,6 +396,7 @@
 
   @media @small-screen {
     flex-direction: column;
+    align-items: center;
   }
 }
 
@@ -437,4 +438,21 @@
 
 .product-extra-info-key {
   font-weight: 600;
+}
+
+.product-photos-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 12px;
+}
+
+.product-photo {
+  border: 1px solid @c_grays_02;
+  margin: 6px;
+  padding: 6px;
+}
+
+.product-photo-image {
+  max-height: 200px;
 }

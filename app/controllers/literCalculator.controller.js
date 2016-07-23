@@ -32,12 +32,12 @@ module.exports = ['$rootScope', '$scope', 'productService',
       { id: 'techo', name: 'Techos' }
     ];
 
-    var paintTypesCalculatorFunctions = [
-      { type: 'latex', literCalculatorFunction: function(squareMeters) { return squareMeters/6 } },
-      { type: 'barniz', literCalculatorFunction: function(squareMeters) { return squareMeters/7 } },
-      { type: 'sintetico', literCalculatorFunction: function(squareMeters) { return squareMeters/5 } },
-      { type: 'membrana', literCalculatorFunction: function(squareMeters) { return squareMeters } }
-    ];
+    $scope.paintTypes = {
+      latex: { coats: 2, meassureUnit: 'litros', literCalculatorFunction: function(squareMeters) { return squareMeters/6 } },
+      sintetico: { coats: 2, meassureUnit: 'litros', literCalculatorFunction: function(squareMeters) { return squareMeters/7 } },
+      barniz: { coats: 3, meassureUnit: 'litros', literCalculatorFunction: function(squareMeters) { return squareMeters/5 } },
+      membrana: { coats: 3, meassureUnit: 'kilos', literCalculatorFunction: function(squareMeters) { return squareMeters } }
+    }
 
     $scope.filterProduct = function(product) {
       return $scope.surface && product.fields.superficie && product.fields.superficie.includes($scope.surface.id);
@@ -56,7 +56,7 @@ module.exports = ['$rootScope', '$scope', 'productService',
     }
 
     $scope.calculate = function() {
-      var type = _.find(paintTypesCalculatorFunctions, function(t) { return t.type == $scope.product.fields.tipo });
+      var type = $scope.paintTypes[$scope.product.fields.tipo];
       var squareMeters = calculateSquareMeters();
       $scope.result = type.literCalculatorFunction(squareMeters);
 

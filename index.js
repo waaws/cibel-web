@@ -10,6 +10,7 @@ require('angular-ui-router');
 var productService = require('./app/services/product.service.js');
 
 var categoryTitleFilter = require ('./app/filters/categoryTitle.filter.js');
+var roundUpFilter = require ('./app/filters/roundUp.filter.js');
 
 var globalController = require('./app/controllers/global.controller.js');
 var homeController = require('./app/controllers/home.controller.js');
@@ -27,6 +28,7 @@ var cibelApp = angular.module('cibelApp', [uibs, 'ui.router', 'ngStorage', 'hc.m
 cibelApp.service('productService', productService);
 
 cibelApp.filter('categoryTitle', categoryTitleFilter);
+cibelApp.filter('roundUp', roundUpFilter);
 
 cibelApp.controller('globalController', globalController);
 cibelApp.controller('homeController', homeController);

@@ -28,19 +28,19 @@
         <div class="liter-calculator-form-input-wrapper">
           <div class="liter-calculator-input">
             <div class="radio-button-input-wrapper">
-              <input type="radio" ng-model="parameterType" value="squareMeter">
+              <input type="radio" ng-model="parameterType" value="squareMeter"/>
               Metros cuadrados (m2)
             </div>
-            <input type="number" ng-model="squareMeter" placeholder="Metros cuadrados (m2)"  class="text-input">
+            <input type="number" ng-model="squareMeter" placeholder="Metros cuadrados (m2)" class="text-input"/>
           </div>
           <div class="liter-calculator-input">
             <div class="radio-button-input-wrapper">
-              <input type="radio" ng-model="parameterType" value="manual">
+              <input type="radio" ng-model="parameterType" value="manual"/>
               Ancho y largo
             </div>
             <div class="liter-calculator-input-wrapper">
-              <input type="number" ng-model="width" placeholder="Ancho" class="text-input">
-              <input type="number" ng-model="large" placeholder="Largo" class="text-input">
+              <input type="number" ng-model="width" placeholder="Ancho" class="text-input"/>
+              <input type="number" ng-model="large" placeholder="Largo" class="text-input"/>
             </div>
           </div>
         </div>
@@ -58,13 +58,9 @@
         <div class="liter-calculator-result-content">
           <div class="liter-calculator-text">
             <span>Usted necesita</span>
-            <span class="liter-calculator-result-number">{{ result | number:2 }}</span>
-            <span>litros de pintura.</span>
+            <span class="liter-calculator-result-number">{{ result | roundUp }}</span>
+            <span>{{ paintTypes[product.fields.tipo].meassureUnit }} de pintura ({{ paintTypes[product.fields.tipo].coats }} manos).</span>
           </div>
-
-          <p class="liter-calculator-text">
-            Recuerde navegar en nuestras secciones consejos e inspiración para sacar el 100% de provecho de nuestros productos.
-          </p>
         </div>
 
         <div class="liter-calculator-button-wrapper">
