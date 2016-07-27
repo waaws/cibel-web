@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "rm -rf ./dist && webpack -p --config webpack.prod.config.js",
-    "dev": "rm -rf ./dist && webpack-dev-server"
+    "dev": "rm -rf ./dist && webpack-dev-server --host 0.0.0.0"
   },
   "repository": {
     "type": "git",
