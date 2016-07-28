@@ -140,6 +140,7 @@
           <div class="product-photos-wrapper">
             <div ng-repeat="photo in product.fotos" class="product-photo">
               <img class="product-photo-image" ng-src="{{ photo.fields.file.url }}" alt="{{ photo.fields.title }}">
+              <p class="text">{{photo.fields.description}}</p>
             </div>
           </div>
         </div>

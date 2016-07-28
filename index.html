@@ -12,9 +12,14 @@
   <link href='https://fonts.googleapis.com/css?family=Quattrocento' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <link rel="icon" type="image/ico" href="assets/images/favicon.ico">
-
+  <link rel="stylesheet" href="animate.css">
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
   <script type="text/javascript" src="dist/bundle.js"></script>
+  <style>
+    .wow:first-child {
+      visibility: hidden;
+    }
+  </style>
 
 
   <!--
@@ -36,7 +41,7 @@
     <div class="modal-window-container"></div>
   </div>
 
-  <header class="header">
+  <header class="header" ng-controller="headerController">
     <div class="header-wrapper">
       <div class="navbar">
         <a href="/" class="header-logo"></a>
@@ -117,7 +122,7 @@
                 </a>
               </li>
               <li class="menu-item">
-                <a ui-sref="index.contact" class="nav-button">
+                <a ng-click="modalContact(1);" class="nav-button">
                   <span>contacto</span>
                 </a>
               </li>
@@ -128,6 +133,7 @@
     </div>
   </header>
 
+
   <div class="home-wrapper" ng-controller="homeController">
     <section id="main" class="main">
       <div class="main-section-wrapper" ui-view></div>
@@ -135,9 +141,9 @@
 
     <section id="home" class="home">
       <div class="layout">
-        <div class="pots-image"></div>
+        <div class="wow fadeIn pots-image"></div>
         <div class="liter-calculator">
-          <a ui-sref="literCalculator" class="liter-calculator-button">
+          <a ui-sref="literCalculator" class="liter-calculator-button wow fadeInDown">
             <i class="icon-calculadora"></i>
             <span class="liter-calculator-label">calculador de litros</span>
           </a>
@@ -151,8 +157,8 @@
 
         <div class="products-buttons-wrapper">
           <div ng-repeat="category in categories" ui-sref="products({category: category.id})" class="product-category-button" ng-class="category.id">
-            <div class="product-category-button-background"></div>
-            <div class="product-category-label-wrapper">
+            <div class="wow fadeIn product-category-button-background"></div>
+            <div class="wow fadeInLeft product-category-label-wrapper">
               <p class="product-category-label-title">{{category.name}}</p>
             </div>
           </div>
@@ -168,13 +174,13 @@
             <div class="line"></div>
         </div>
         <div class="advice-buttons-wrapper">
-          <button ng-click="openAdviceModal(1);" class="white-button"><i class="icon-paint-1" aria-hidden="true"></i> Antes de empezar</button>
-          <button ng-click="openAdviceModal(2);" class="white-button"><i class="icon-painting" aria-hidden="true"></i> Reglas</button>
-          <button ng-click="openAdviceModal(3);" class="white-button"><i class="icon-uso"></i> Preparación de superficies sin pintar</button>
-          <button ng-click="openAdviceModal(4);" class="white-button"><i class="icon-rendimiento"></i> Mantenimiento</button>
-          <button ng-click="openAdviceModal(5);" class="white-button"><i class="fa fa-exclamation" aria-hidden="true"></i> Problemas comunes de la pintura</button>
-          <button ng-click="openAdviceModal(6);" class="white-button"><i class="icon-entonadores" aria-hidden="true"></i> Aplicación</button>
-          <button ng-click="openAdviceModal(7);" class="white-button"><i class="icon-resistencia " aria-hidden="true"></i> Herramientas</button>
+          <button ng-click="openAdviceModal(1);" class="white-button wow fadeInDown"><i class="icon-paint-1" aria-hidden="true"></i> Antes de empezar</button>
+          <button ng-click="openAdviceModal(2);" class="white-button wow fadeInDown" data-wow-delay="0.2s"><i class="icon-painting" aria-hidden="true"></i> Reglas</button>
+          <button ng-click="openAdviceModal(3);" class="white-button wow fadeInDown" data-wow-delay="0.4s"><i class="icon-uso"></i> Preparación de superficies sin pintar</button>
+          <button ng-click="openAdviceModal(4);" class="white-button wow fadeInDown" data-wow-delay="0.6s"><i class="icon-rendimiento"></i> Mantenimiento</button>
+          <button ng-click="openAdviceModal(5);" class="white-button wow fadeInDown" data-wow-delay="0.8s"><i class="fa fa-exclamation" aria-hidden="true"></i> Problemas comunes de la pintura</button>
+          <button ng-click="openAdviceModal(6);" class="white-button wow fadeInDown" data-wow-delay="1s"><i class="icon-entonadores" aria-hidden="true"></i> Aplicación</button>
+          <button ng-click="openAdviceModal(7);" class="white-button wow fadeInDown" data-wow-delay="1.2s"><i class="icon-resistencia " aria-hidden="true"></i> Herramientas</button>
         </div>
       </div>
     </section>
@@ -188,23 +194,23 @@
         </div>
 
         <div class="inspiration-box-wrapper">
-          <div class="inspiration-box">
+          <div class="inspiration-box wow fadeInLeft">
             <h4 class="inspiration-box-title">¿Cómo elegir los colores para tu casa?</h4>
             <p class="inspiration-box-text">
               Los colores reflejan tu personalidad, tu estado de ánimo, tus sentimientos... La elección incorrecta del color hará que tu casa pierda calidez y que no se destaquen sus rasgos distintivos. Sin embargo, si elegís correctamente los colores, podrás destacar tu casa, distinguir su arquitectura e incluso ocultar los defectos estructurales que puedan llegar  existir. Así, impulsaras el atractivo de tu inmueble y por consiguiente el valor de mercado.
             </p>
             <div class="inspiration-box-button-wrapper">
-              <a ng-click="openInspirationModal(1);" class="white-button">sugerencias</a>
+              <a ng-click="openInspirationModal(1);" class="white-button wow fadeInLeft">sugerencias</a>
             </div>
           </div>
 
-          <div class="inspiration-box">
+          <div class="inspiration-box wow fadeInRight">
             <h4 class="inspiration-box-title">¿Cómo nos afectan los colores?</h4>
             <p class="inspiration-box-text">
               El color no solo es la impresión  que nuestros ojos perciben por la luz, en otras palabras lo que miramos, sino que además influye en lo que sentimos. Así,  a partir de la Psicología del Color y la Cromoterapia, se ha buscado identificar los efectos de los colores sobre nosotros.
             </p>
             <div class="inspiration-box-button-wrapper">
-              <a ng-click="openInspirationModal(2);" class="white-button">descubramos</a>
+              <a ng-click="openInspirationModal(2);" class="white-button wow fadeInRight">descubramos</a>
             </div>
           </div>
         </div>
@@ -214,7 +220,7 @@
     <section id="company" class="company">
       <div class="layout">
         <div class="company-box-wrapper">
-          <div class="company-box">
+          <div class="company-box wow fadeInLeft">
             <h3 class="title">empresa</h3>
             <div class="company-box-text-wrapper">
               <p class="company-box-text">
@@ -225,10 +231,10 @@
                 La línea de pinturas Cibel se vende en pinturerías, ferreterías, corralones y mayoristas.
               </p>
             </div>
-            <a ui-sref="history" class="text-button">historia</a>
+            <a ui-sref="history" class="text-button wow fadeInLeft">historia</a>
           </div>
 
-          <div class="company-box">
+          <div class="company-box wow fadeInRight">
             <h3 class="title">responsabilidad social</h3>
             <div class="company-box-text-wrapper">
               <p class="company-box-text">
@@ -241,7 +247,7 @@
                 Nuestra actividad como compañia química presenta un gran impacto en el desarrollo social de nuestro país, y específicamente en la comunidad en la que desarrollamos nuestra actividad.
               </p>
             </div>
-            <a ui-sref="social" class="text-button">un mundo mejor</a>
+            <a ui-sref="social" class="text-button wow fadeInRight">un mundo mejor</a>
           </div>
         </div>
       </div>
@@ -264,5 +270,23 @@
       </div>
     </footer>
   </div>
+  <script src="wow.min.js"></script>
+  <script>
+    wow = new WOW(
+      {
+        animateClass: 'animated',
+        offset:       100,
+        callback:     function(box) {
+          console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
+        }
+      }
+    );
+    wow.init();
+    document.getElementById('moar').onclick = function() {
+      var section = document.createElement('section');
+      section.className = 'section--purple wow fadeInDown';
+      this.parentNode.insertBefore(section, this);
+    };
+  </script>
 </body>
 </html>
