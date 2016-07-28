@@ -22,14 +22,37 @@
     flex-wrap: wrap;
   }
 }
+.titlewithline {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  .line {
+    flex-grow: 1;
+    height:1px;
+    background-color: white;
+  }
+  .title {
+    color: @c_white;
+    line-height: 121px;
+    margin: 0 40px;
 
+
+
+
+
+    @media @small-screen {
+      line-height: 50px;
+    }
+  }
+}
 .pots-image {
   background-image: @home-pots;
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  height: 350px;
-  margin: 12px;
+  height: 400px;
+  margin: 12px 0;
   min-width: 50%;
   flex-grow: 1;
 
