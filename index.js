@@ -24,7 +24,7 @@ var productShowController = require('./app/controllers/productShow.controller.js
 var modalDirective = require('./app/directives/modal.directive.js');
 var modalContentDirective = require('./app/directives/modalContent.directive.js');
 
-var cibelApp = angular.module('cibelApp', [uibs, 'ui.router', 'ngStorage', 'hc.marked']);
+var cibelApp = angular.module('cibelApp', [uibs, 'ui.router', 'ngStorage', 'hc.marked','ngWapi']);
 
 cibelApp.service('productService', productService);
 

@@ -2,7 +2,7 @@
 
 <html lang="en">
 <head>
-  <base href="http://waaws.space/partners/cibel/" target="_blank">
+  <base href="/" target="_blank">
   <meta charset="utf-8">
 
   <title>Cibel</title>
@@ -34,7 +34,7 @@
   <link rel="stylesheet" href="assets/fonts/icons/style.css">
 </head>
 
-<body ng-app="cibelApp" ng-controller="globalController">
+<body ng-app="cibelApp" ng-controller="globalController" ng-cloak>
   <div class="modal-wrapper initiallyHidden">
     <div class="modal-backdrop" ng-click="closeModal();"></div>
 
@@ -79,7 +79,7 @@
                   </a>
                 </li>
                 <li class="menu-item">
-                  <a ui-sref="index.contact" class="nav-button">
+                  <a ng-click="modalContact(1);" class="nav-button">
                     <span>contacto</span>
                   </a>
                 </li>
@@ -288,5 +288,6 @@
       this.parentNode.insertBefore(section, this);
     };
   </script>
+  <script type="text/javascript" src="//waaws-api.herokuapp.com/cibel/browser/ng-wapi.js"></script>
 </body>
 </html>

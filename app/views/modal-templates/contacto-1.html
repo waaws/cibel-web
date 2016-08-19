@@ -5,28 +5,30 @@
   <h3 class="modal-content-title">Escribinos tu consulta</h3>
 
   <div class="contact-modal-content-section wapi-form-wrapper" data-form-name="contact">
-    <form class="wapi-form">
+    <form w-form="contact" ng-submit="submit()">
       <div class="group">
-        <input type="text" name="email" required>
+        <input type="text" ng-model="data.email" required>
         <span class="highlight"></span>
         <span class="bar"></span>
         <label>Tu email</label>
       </div>
       <div class="group">
-        <input type="text" name="message" required>
+        <input type="text" ng-model="data.message" required>
         <span class="highlight"></span>
         <span class="bar"></span>
-        <label>Mensaje</label>
+        <label>Escribe un mensaje corto</label>
       </div>
           <button class="liter-calculator-button">Enviar tu consulta</button>
+
+          <div class="wapi-form-done" ng-show="submitted">
+              Gracias por tu consulta. Nos comunicaremos con vos lo antes posible.
+          </div>
+          <div class="wapi-form-fail" ng-show="fail">
+              Algo salió mal. Por favor vuelve a intentarlo.
+          </div>
+
       </form>
 
-      <div class="wapi-form-done">
-          Gracias por tu consulta. Nos comunicaremos con vos lo antes posible.
-      </div>
-      <div class="wapi-form-fail">
-          Algo salió mal. Por favor vuelve a intentarlo.
-      </div>
 
 
 
@@ -34,9 +36,4 @@
 
   </div>
   <div class="imagen-contacto"></div>
-
-  <script type="text/javascript" src="http://waaws-api.herokuapp.com/cibel/browser.js"></script>
-  <script>
-        wapi.autoInitForms();
-  </script>
 </div>
