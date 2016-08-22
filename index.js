@@ -14,6 +14,7 @@ var roundUpFilter = require ('./app/filters/roundUp.filter.js');
 
 var globalController = require('./app/controllers/global.controller.js');
 var homeController = require('./app/controllers/home.controller.js');
+var headerController = require('./app/controllers/header.controller.js');
 var companyController = require('./app/controllers/company.controller.js');
 var literCalculatorController = require('./app/controllers/literCalculator.controller.js');
 var modalController = require('./app/controllers/modal.controller.js');
@@ -23,7 +24,7 @@ var productShowController = require('./app/controllers/productShow.controller.js
 var modalDirective = require('./app/directives/modal.directive.js');
 var modalContentDirective = require('./app/directives/modalContent.directive.js');
 
-var cibelApp = angular.module('cibelApp', [uibs, 'ui.router', 'ngStorage', 'hc.marked']);
+var cibelApp = angular.module('cibelApp', [uibs, 'ui.router', 'ngStorage', 'hc.marked','ngWapi']);
 
 cibelApp.service('productService', productService);
 
@@ -32,6 +33,7 @@ cibelApp.filter('roundUp', roundUpFilter);
 
 cibelApp.controller('globalController', globalController);
 cibelApp.controller('homeController', homeController);
+cibelApp.controller('headerController', headerController);
 cibelApp.controller('companyController', companyController);
 cibelApp.controller('literCalculatorController', literCalculatorController);
 cibelApp.controller('modalController', modalController);

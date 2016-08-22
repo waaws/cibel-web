@@ -83,8 +83,29 @@
   letter-spacing: 0.5px;
 }
 
+.inspiracion-representacion{
+  width: 100%;
+  height: 200px;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  margin: 10px 0 20px 0;
+  border: 1px solid @c_grays_01;
+    &.naturaleza { background-image: url("../../assets/images/Inspiracion_naturaleza.jpg");}
+    &.vecinos { background-image: url("../../assets/images/Inspiracion_vecindario.jpg");}
+    &.techo { background-image: url("../../assets/images/Inspiracion_techo.jpg");}
+    &.luz { background-image: url("../../assets/images/Inspiracion_luz.jpg");}
+    &.oscuros { background-image: url("../../assets/images/Inspiracion_oscuro.jpg");}
+    &.interior { background-image: url("../../assets/images/Inspiracion_interiorcasa.jpg");}
+    &.cantidad { background-image: url("../../assets/images/Inspiracion_cantidaddecolores.jpg");}
+    &.familias { background-image: url("../../assets/images/Inspiracion_familiadecolores.jpg");}
+
+}
 .inspiration-modal-subtitle {
-  margin: 12px;
+  margin: 24px 24px 12px 24px;
+  color: @c_grays_06;
 }
 
 .inspiration-modal-content-subtitle {

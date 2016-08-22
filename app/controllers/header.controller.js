@@ -4,12 +4,7 @@ module.exports = ['$scope', '$compile', function($scope, $compile) {
     var compiledeHTML = $compile(htmlString)($scope);
     $(".modal-window-container").append(compiledeHTML);
   }
-  
-  $scope.openAdviceModal = function(adviceId) {
-    $scope.openModal('consejos', 'advice', adviceId, 7);
-  }
-
-  $scope.openInspirationModal = function(inspirationId) {
-    $scope.openModal('inspiración', 'inspiration', inspirationId, 2);
+  $scope.modalContact = function(contactId) {
+    $scope.openModal('contacto', "contacto", 1);
   }
 }];
