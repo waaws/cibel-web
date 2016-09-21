@@ -151,7 +151,9 @@ font-size: 12px;}
   font-weight: 700;
   text-transform: uppercase;
   flex-grow: 1;
-
+@media @medium-screen {
+  font-size: 30px;
+}
   @media @small-screen {
     font-size: 24px;
     margin: 12px 0;
@@ -271,7 +273,8 @@ font-size: 12px;}
   width: 100%;
 
   @media @small-screen {
-    margin: 12px 0;
+    margin: 12px auto;
+    width: 60%;
   }
 
   img {
@@ -411,6 +414,8 @@ font-size: 12px;}
 
   @media @small-screen {
     margin: 6px 0;
+    min-width: 100%;
+    max-width: 100%;
   }
 }
 

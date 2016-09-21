@@ -65,7 +65,7 @@
 }
 
 .mobile-dropdown-menu {
-  background-color: @c_grays_00;
+  background-color: @c_yellow_03;
   border: 0;
   border-radius: 0;
   box-shadow: none;
@@ -73,17 +73,17 @@
   margin: 0;
   right: 0;
   text-transform: capitalize;
-  width: 90%;
+  width: 100%;
 }
 
 .nav-menu-button {
-  color: @c_white;
+  color: @c_grays_08;
   font-size: 14px;
   line-height: 12px;
   margin: 12px;
 
   &:active, &:visited, &:focus, &:hover {
-    color: @c_white;
+    color: @c_grays_09;
   }
 }
 
@@ -129,7 +129,11 @@
   text-transform: uppercase;
   transition: 0.5s;
 
-  @media @small-screen {
+  @media @medium-screen {
+    font-weight: 600;
+  }
+
+  @media @small-screen {  
     display: block;
     text-transform: capitalize;
     padding: 4px;
@@ -149,11 +153,12 @@
 }
 
 .submenu-item {
-  color: @c_grays_03;
+  color: @c_grays_07;
   display: block;
   font-size: 14px;
   padding: 4px;
   text-align: right;
+  font-weight: 300;
 
   a {
     padding: 6px 12px;
