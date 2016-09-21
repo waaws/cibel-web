@@ -59,6 +59,13 @@
                   <p class="product-technical-info-field-value">{{ product.rendimiento || '-'  }}</p>
                 </div>
               </div>
+              <div class="product-technical-info-field-wrapper">
+                <span class="product-technical-info-field-icon icon-paint-2"></span>
+                <div class="product-technical-info-field">
+                  <p class="product-technical-info-field-key">Colores disponibles</p>
+                  <p class="product-technical-info-field-value">{{ formatList(product.colores) || '-'  }}</p>
+                </div>
+              </div>
             </div>
 
             <div class="product-technical-info-fields-wrapper">
@@ -85,6 +92,8 @@
                   <p class="product-technical-info-field-value">{{ product.presentacion || '-'  }}</p>
                 </div>
               </div>
+
+
             </div>
           </div>
         </div>
