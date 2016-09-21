@@ -1,22 +1,25 @@
 # cibel-web
 Website de Cibel
 
-Para correr en Dev:
+##La primera vez:
+```
+npm install
+```
 
-- La primera vez:
-  ```
-  npm install
-  ```
+##Para levantar el servidor local
 
-Para levantar el servidor:
+```
+npm start
+```
 
-  ```
-  sudo npm install -g webpack
-  webpack-dev-server
-  ```
+y navegar:
 
-Para acceder a la web:
+http://localhost:8080
 
-  ```
-  localhost:8080
-  ```
+##Para subir a producción correr
+
+```
+npm run build
+```
+
+Esto genera los archivos en la carpeta `dist`
