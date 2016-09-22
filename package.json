@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "rm -rf ./dist && webpack -p --config webpack.prod.config.js",
-    "start": "rm -rf ./dist && webpack-dev-server --host 0.0.0.0"
+    "start": "rm -rf ./dist && webpack-dev-server --host 0.0.0.0",
+    "postinstall":"npm run build"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,7 @@
     "angular-ui-router": "^0.3.1",
     "contentful": "^3.5.0",
     "css-loader": "^0.23.1",
+    "express": "^4.14.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "jquery": "^3.1.0",
     "less": "^2.7.1",
