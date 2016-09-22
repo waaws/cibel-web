@@ -38,4 +38,4 @@ jspm_packages
 
 # Webpack dist directory
 dist
-
+.DS_Store
