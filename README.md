@@ -23,3 +23,7 @@ npm run build
 ```
 
 Esto genera los archivos en la carpeta `dist`
+
+## Para visualizar la Web
+
+https://waawsdev-cibel.herokuapp.com/
