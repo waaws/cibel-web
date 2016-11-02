@@ -48,7 +48,7 @@ cibelApp.config(['$stateProvider', '$urlRouterProvider', "$locationProvider",
   $locationProvider.html5Mode(true);
   $urlRouterProvider.otherwise("/");
 
-  var showSectionsAndScrollTo = function(section) {
+  var showSectionsAndTo = function(section) {
     var sections = ['#home', '#products', '#advice', '#inspiration', '#company'];
     $(sections.join(',')).show();
     setTimeout(function() {
@@ -115,12 +115,22 @@ cibelApp.config(['$stateProvider', '$urlRouterProvider', "$locationProvider",
     .state('history', {
       url: "/historia",
       templateUrl: "app/views/history.html",
-      controller: 'companyController'
+      controller: 'companyController',
+      onEnter:function(){
+        $('html, body').animate({
+          scrollTop: 0
+        }, 600);
+      }
     })
     .state('social', {
       url: "/social",
       templateUrl: "app/views/social.html",
-      controller: 'companyController'
+      controller: 'companyController',
+      onEnter:function(){
+        $('html, body').animate({
+          scrollTop: 0
+        }, 600);
+      }
     });
 }]);
 
