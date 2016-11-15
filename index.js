@@ -48,7 +48,7 @@ cibelApp.config(['$stateProvider', '$urlRouterProvider', "$locationProvider",
   $locationProvider.html5Mode(true);
   $urlRouterProvider.otherwise("/");
 
-  var showSectionsAndTo = function(section) {
+  var showSectionsAndScrollTo = function(section) {
     var sections = ['#home', '#products', '#advice', '#inspiration', '#company'];
     $(sections.join(',')).show();
     setTimeout(function() {
